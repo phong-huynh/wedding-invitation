@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no">
     <title>Hữu Hậu & Thuỳ Linh - Save Our Date</title>
     <!-- Tailwind CSS -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -54,6 +56,7 @@
             color: #0F1E15;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            user-select: none;
         }
 
         /* Custom typography styling for The Nautigal */
@@ -192,7 +195,7 @@
         class="relative min-h-screen pt-20 md:pt-28 flex flex-col items-center justify-center bg-emerald-950 overflow-hidden px-4 sm:px-6 lg:px-8">
         <!-- Botanical Leaf Overlays -->
         <div class="absolute inset-0 opacity-15 pointer-events-none bg-cover bg-center"
-            style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1920'); mix-blend-mode: overlay;">
+            style="background-image: url('./assets/images/backgrounds/bg-1.jpeg'); mix-blend-mode: overlay;">
         </div>
 
         <!-- Luxury ambient glowing background -->
@@ -207,10 +210,17 @@
             class="relative z-10 max-w-7xl mx-auto py-8 sm:py-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 w-full">
             <!-- Hero Left: Typography & Date -->
             <div class="w-full lg:w-1/2 text-center lg:text-left text-white space-y-4 sm:space-y-6">
-                <span
-                    class="inline-block text-gold-300 tracking-[0.25em] text-[10px] sm:text-xs font-semibold uppercase animate__animated animate__fadeInDown">
-                    <i class="fa-solid fa-crown mr-1.5"></i> Save The Date
-                </span>
+                <!-- Decade Journey Highlighted Banner & Badge -->
+                <div class="space-y-2 animate__animated animate__fadeInDown">
+                    <span
+                        class="inline-block text-gold-300 tracking-[0.25em] text-[10px] sm:text-xs font-semibold uppercase">
+                        <i class="fa-solid fa-crown mr-1.5"></i> Save The Date
+                    </span>
+                    <span
+                        class="block text-[11px] sm:text-xs tracking-[0.15em] text-gold-200/90 font-medium uppercase bg-gold-400/10 border border-gold-400/20 px-4 py-1.5 rounded-full w-fit mx-auto lg:mx-0">
+                        <i class="fa-solid fa-hourglass-half mr-1.5"></i> Hành trình 10 năm yêu thương
+                    </span>
+                </div>
 
                 <!-- Couple names with layout safety for high ascenders/descenders -->
                 <div class="space-y-0.5 animate__animated animate__fadeInLeft">
@@ -218,7 +228,7 @@
                         class="text-6xl sm:text-8xl md:text-9xl font-normal text-gold-300 text-script tracking-wide leading-none">
                         Hữu Hậu
                     </h1>
-                    <div class="text-xl sm:text-2xl text-gray-400 font-light tracking-widest py-1 sm:py-2 pl-1">và
+                    <div class="text-xl sm:text-2xl text-gray-400 font-light tracking-widest py-1 sm:py-2 pl-1">cùng
                     </div>
                     <h1
                         class="text-6xl sm:text-8xl md:text-9xl font-normal text-gold-300 text-script tracking-wide leading-none">
@@ -228,8 +238,8 @@
 
                 <p
                     class="text-gray-300 text-xs sm:text-sm md:text-base tracking-wider font-light max-w-md mx-auto lg:mx-0 animate__animated animate__fadeInUp leading-relaxed">
-                    Cùng chung bước trên con đường ngập tràn sắc xanh của thiên nhiên và ánh nắng vàng hạnh phúc vĩnh
-                    cửu.
+                    Một thập kỷ cùng nhau đi qua thăng trầm tuổi trẻ, hôm nay chính thức bước vào chương hạnh
+                    phúc trọn đời.
                 </p>
 
                 <!-- Elegant Date Showcase -->
@@ -267,14 +277,10 @@
             <!-- Hero Right: Portrait frame with secure relative bounds -->
             <div class="w-full lg:w-1/2 flex justify-center mt-4 lg:mt-0">
                 <div class="relative group">
-                    <!-- Thin gold decorative frame -->
                     <div
-                        class="absolute -inset-2.5 sm:-inset-3 rounded-2xl border border-gold-400/40 transform translate-x-2.5 translate-y-2.5 sm:translate-x-3 sm:translate-y-3 pointer-events-none transition-transform group-hover:translate-x-1 group-hover:translate-y-1 duration-500">
-                    </div>
-                    <div
-                        class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[9/16] h-[360px] xs:h-[400px] sm:h-[500px] md:h-[550px] w-auto">
+                        class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[9/16] h-[400px] xs:h-[440px] sm:h-[540px] md:h-[590px] w-auto">
                         <!-- Main bridal portrait photo -->
-                        <img src="att.c0FMHvawFFFYFxps3OTHmEOPeIQiVpEOT_3G1PQNXgs.JPG" alt="Hữu Hậu & Thuỳ Linh"
+                        <img loading="lazy" src="./assets/images/1.JPG" alt="Hữu Hậu & Thuỳ Linh"
                             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <!-- Decorative Floating Heart Badge -->
@@ -368,8 +374,7 @@
                     <div class="w-full md:w-1/2 order-1 md:order-2">
                         <div
                             class="relative rounded-2xl overflow-hidden shadow-lg border border-gold-300/30 aspect-[4/3] group max-w-md mx-auto md:max-w-none">
-                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800"
-                                alt="Gặp gỡ"
+                            <img loading="lazy" src="./assets/images/backgrounds/bg-2.jpeg" alt="Gặp gỡ"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             <div
                                 class="absolute bottom-3 left-3 bg-emerald-950/90 text-gold-300 text-[9px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full">
@@ -384,8 +389,7 @@
                     <div class="w-full md:w-1/2">
                         <div
                             class="relative rounded-2xl overflow-hidden shadow-lg border border-gold-300/30 aspect-[4/3] group max-w-md mx-auto md:max-w-none">
-                            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800"
-                                alt="Cầu hôn"
+                            <img loading="lazy" src="./assets/images/backgrounds/bg-3.jpeg" alt="Cầu hôn"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             <div
                                 class="absolute bottom-3 left-3 bg-emerald-950/90 text-gold-300 text-[9px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full">
@@ -414,7 +418,7 @@
     <!-- Auto-play Slideshow Gallery Section -->
     <section id="slideshow-section" class="py-14 sm:py-24 bg-emerald-950 text-white relative px-4 sm:px-6">
         <div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center"
-            style="background-image: url('https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=1920');">
+            style="background-image: url('./assets//images/backgrounds/bg-4.jpeg');">
         </div>
         <div class="relative z-10 max-w-5xl mx-auto">
 
@@ -433,7 +437,7 @@
 
                     <!-- Slide 1 (User Photo) -->
                     <div class="slideshow-item slide-fade active absolute inset-0 w-full h-full">
-                        <img src="att.c0FMHvawFFFYFxps3OTHmEOPeIQiVpEOT_3G1PQNXgs.JPG" alt="Slideshow Image 1"
+                        <img loading="lazy" src="./assets/images/horizontal/1.JPG" alt="Slideshow Image 1"
                             class="w-full h-full object-cover object-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                         </div>
@@ -447,8 +451,8 @@
 
                     <!-- Slide 2 -->
                     <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200"
-                            alt="Slideshow Image 2" class="w-full h-full object-cover object-center">
+                        <img loading="lazy" src="./assets/images/horizontal/2.JPG" alt="Slideshow Image 2"
+                            class="w-full h-full object-cover object-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
@@ -461,8 +465,8 @@
 
                     <!-- Slide 3 -->
                     <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200"
-                            alt="Slideshow Image 3" class="w-full h-full object-cover object-center">
+                        <img loading="lazy" src="./assets/images/horizontal/3.JPG" alt="Slideshow Image 3"
+                            class="w-full h-full object-cover object-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
@@ -475,8 +479,8 @@
 
                     <!-- Slide 4 -->
                     <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200"
-                            alt="Slideshow Image 4" class="w-full h-full object-cover object-center">
+                        <img loading="lazy" src="./assets/images/horizontal/4.JPG" alt="Slideshow Image 4"
+                            class="w-full h-full object-cover object-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
@@ -489,8 +493,83 @@
 
                     <!-- Slide 5 -->
                     <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img src="https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=1200"
-                            alt="Slideshow Image 5" class="w-full h-full object-cover object-center">
+                        <img loading="lazy" src="./assets/images/horizontal/5.JPG" alt="Slideshow Image 5"
+                            class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
+                            <span
+                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
+                                Vũ Thiên Nhiên</span>
+                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
+                        <img loading="lazy" src="./assets/images/horizontal/6.JPG" alt="Slideshow Image 6"
+                            class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
+                            <span
+                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
+                                Vũ Thiên Nhiên</span>
+                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
+                        <img loading="lazy" src="./assets/images/horizontal/7.JPG" alt="Slideshow Image 7"
+                            class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
+                            <span
+                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
+                                Vũ Thiên Nhiên</span>
+                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
+                        <img loading="lazy" src="./assets/images/horizontal/8.JPG" alt="Slideshow Image 8"
+                            class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
+                            <span
+                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
+                                Vũ Thiên Nhiên</span>
+                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Slide 9 -->
+                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
+                        <img loading="lazy" src="./assets/images/horizontal/9.JPG" alt="Slideshow Image 9"
+                            class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
+                            <span
+                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
+                                Vũ Thiên Nhiên</span>
+                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- Slide 10 -->
+                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
+                        <img loading="lazy" src="./assets/images/horizontal/10.JPG" alt="Slideshow Image 10"
+                            class="w-full h-full object-cover object-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
@@ -555,8 +634,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-sm sm:max-w-none mx-auto">
                 <!-- Card 1 (Hữu Hậu & Thuỳ Linh main) -->
                 <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('att.c0FMHvawFFFYFxps3OTHmEOPeIQiVpEOT_3G1PQNXgs.JPG')">
-                    <img src="att.c0FMHvawFFFYFxps3OTHmEOPeIQiVpEOT_3G1PQNXgs.JPG" alt="Main wedding photo"
+                    onclick="openLightbox('./assets/images/vertical/1.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/1.JPG" alt="Main wedding photo"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
@@ -575,9 +654,8 @@
 
                 <!-- Card 2 -->
                 <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200')">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200"
-                        alt="Nắm tay ngọt ngào"
+                    onclick="openLightbox('./assets/images/vertical/2.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/2.JPG" alt="Nắm tay ngọt ngào"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
@@ -595,9 +673,8 @@
 
                 <!-- Card 3 -->
                 <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200')">
-                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200"
-                        alt="Nụ cười ngọt ngào"
+                    onclick="openLightbox('./assets/images/vertical/3.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/3.JPG" alt="Nụ cười ngọt ngào"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
@@ -615,9 +692,8 @@
 
                 <!-- Card 4 -->
                 <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200')">
-                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200"
-                        alt="Nhẫn cưới lãng mạn"
+                    onclick="openLightbox('./assets/images/vertical/4.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/4.JPG" alt="Nhẫn cưới lãng mạn"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
@@ -635,9 +711,8 @@
 
                 <!-- Card 5 -->
                 <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1544078751-58feb2dcbda7?q=80&w=1200')">
-                    <img src="https://images.unsplash.com/photo-1544078751-58feb2dcbda7?q=80&w=1200"
-                        alt="Không gian tiệc cưới"
+                    onclick="openLightbox('./assets/images/vertical/5.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/5.JPG" alt="Không gian tiệc cưới"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
@@ -655,8 +730,65 @@
 
                 <!-- Card 6 -->
                 <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=1200')">
-                    <img src="https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=1200" alt="Khiêu vũ"
+                    onclick="openLightbox('./assets/images/vertical/6.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/6.JPG" alt="Khiêu vũ"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
+                    </div>
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Giai
+                            Điệu Tình Yêu</span>
+                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Khiêu Vũ Dưới Hoàng Hôn</h4>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+                    onclick="openLightbox('./assets/images/vertical/7.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/7.JPG" alt="Khiêu vũ"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
+                    </div>
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Giai
+                            Điệu Tình Yêu</span>
+                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Khiêu Vũ Dưới Hoàng Hôn</h4>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+                    onclick="openLightbox('./assets/images/vertical/8.JPG')">
+                    <img loading="lazy" src="./assets/images/vertical/8.JPG" alt="Khiêu vũ"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
+                    </div>
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Giai
+                            Điệu Tình Yêu</span>
+                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Khiêu Vũ Dưới Hoàng Hôn</h4>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+                    onclick="openLightbox('./assets/images/vertical/9.JPG')">
+                    <img loading="lazy" loading="lazy" src="./assets/images/vertical/9.JPG" alt="Khiêu vũ"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
@@ -683,7 +815,7 @@
             class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl sm:text-4xl hover:text-gold-300 focus:outline-none"
             onclick="closeLightbox()">&times;</button>
         <div class="max-w-4xl max-h-[85vh] p-4 relative" onclick="event.stopPropagation()">
-            <img id="lightboxImg" src="" alt="Zoomed wedding photo"
+            <img loading="lazy" id="lightboxImg" src="" alt="Zoomed wedding photo"
                 class="max-w-full max-h-[80vh] rounded-lg shadow-2xl mx-auto object-contain border border-white/10">
         </div>
     </div>
@@ -736,7 +868,7 @@
                     <!-- Visual route button/map container -->
                     <div
                         class="relative w-full h-[180px] sm:h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-inner border border-gray-200">
-                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=600" alt="Map Vu Quy"
+                        <img loading="lazy" src="./assets/images/backgrounds/map-1.jpeg" alt="Map Vu Quy"
                             class="w-full h-full object-cover">
                         <div
                             class="absolute inset-0 bg-emerald-950/70 flex flex-col items-center justify-center text-center p-4">
@@ -786,8 +918,8 @@
                     <!-- Visual GEM Center map image holder -->
                     <div
                         class="relative w-full h-[180px] sm:h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-inner border border-emerald-900/30">
-                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=600"
-                            alt="Map cash" class="w-full h-full object-cover">
+                        <img loading="lazy" src="./assets/images/backgrounds/map-2.jpeg" alt="Map cash"
+                            class="w-full h-full object-cover">
                         <div
                             class="absolute inset-0 bg-emerald-950/75 flex flex-col items-center justify-center text-center p-4">
                             <span
@@ -915,7 +1047,8 @@
                                     <span
                                         class="block text-[9px] font-bold text-emerald-950 uppercase tracking-widest">CHÚ
                                         RỂ HỮU HẬU</span>
-                                    <img src="https://placehold.co/200x200/132E1D/C5A880?text=QR+Groom+Bank"
+                                    <img loading="lazy"
+                                        src="https://placehold.co/200x200/132E1D/C5A880?text=QR+Groom+Bank"
                                         alt="QR Groom Banking"
                                         class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl border border-gold-400/10">
                                     <div class="text-[10px] sm:text-[11px] text-gray-500 space-y-0.5">
@@ -928,7 +1061,8 @@
                                     <span
                                         class="block text-[9px] font-bold text-emerald-950 uppercase tracking-widest">CÔ
                                         DÂU THUỲ LINH</span>
-                                    <img src="https://placehold.co/200x200/132E1D/C5A880?text=QR+Bride+Bank"
+                                    <img loading="lazy"
+                                        src="https://placehold.co/200x200/132E1D/C5A880?text=QR+Bride+Bank"
                                         alt="QR Bride Banking"
                                         class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl border border-gold-400/10">
                                     <div class="text-[10px] sm:text-[11px] text-gray-500 space-y-0.5">
@@ -984,7 +1118,7 @@
     <!-- Thank You Section -->
     <section class="py-16 sm:py-28 bg-emerald-950 text-white relative text-center px-4">
         <div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center"
-            style="background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1920');">
+            style="background-image: url('./assets/images/backgrounds/bg-5.jpeg');">
         </div>
         <div class="relative z-10 max-w-4xl mx-auto space-y-4 sm:space-y-6">
             <p class="text-6xl sm:text-7xl font-normal text-gold-300 text-script block">Thank You</p>
