@@ -1,299 +1,420 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no"
+    />
     <title>Hữu Hậu & Thuỳ Linh - Save Our Date</title>
     <!-- Tailwind CSS -->
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emerald: {
-                            850: '#0f2919',
-                            900: '#132E1D',
-                            950: '#0a1a10',
-                        },
-                        gold: {
-                            100: '#f6ebd0',
-                            200: '#eddca9',
-                            300: '#e1ca82',
-                            400: '#d4af37',
-                            500: '#c5a880',
-                        }
-                    },
-                    fontFamily: {
-                        nautigal: ['"The Nautigal"', 'cursive'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    screens: {
-                        'xs': '375px',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              emerald: {
+                850: "#0f2919",
+                900: "#132E1D",
+                950: "#0a1a10",
+              },
+              gold: {
+                100: "#f6ebd0",
+                200: "#eddca9",
+                300: "#e1ca82",
+                400: "#d4af37",
+                500: "#c5a880",
+              },
+            },
+            fontFamily: {
+              nautigal: ['"The Nautigal"', "cursive"],
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
+            screens: {
+              xs: "375px",
+            },
+          },
+        },
+      };
     </script>
     <!-- Google Fonts: Import Plus Jakarta Sans and The Nautigal -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=The+Nautigal:wght@400;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=The+Nautigal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!-- Animate.css for entrance effects -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <style>
-        body {
-            background-color: #F4F6F0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #0F1E15;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            user-select: none;
-        }
+      body {
+        background-color: #f4f6f0;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: #0f1e15;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        user-select: none;
+      }
 
-        /* Custom typography styling for The Nautigal */
-        .text-script {
-            font-family: 'The Nautigal', cursive;
-            line-height: 0.8;
-            padding-bottom: 0.15em;
-        }
+      /* Custom typography styling for The Nautigal */
+      .text-script {
+        font-family: "The Nautigal", cursive;
+        line-height: 0.8;
+        padding-bottom: 0.15em;
+      }
 
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #d4af37 0%, #f6ebd0 50%, #c5a880 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      .text-gold-gradient {
+        background: linear-gradient(
+          135deg,
+          #d4af37 0%,
+          #f6ebd0 50%,
+          #c5a880 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        .bg-gold-gradient {
-            background: linear-gradient(135deg, #c5a880 0%, #d4af37 100%);
-        }
+      .bg-gold-gradient {
+        background: linear-gradient(135deg, #c5a880 0%, #d4af37 100%);
+      }
 
-        .bg-emerald-gradient {
-            background: linear-gradient(135deg, #132E1D 0%, #0a1a10 100%);
-        }
+      .bg-emerald-gradient {
+        background: linear-gradient(135deg, #132e1d 0%, #0a1a10 100%);
+      }
 
-        .luxury-shadow {
-            box-shadow: 0 20px 40px -15px rgba(19, 46, 29, 0.15);
-        }
+      .luxury-shadow {
+        box-shadow: 0 20px 40px -15px rgba(19, 46, 29, 0.15);
+      }
 
-        .glass-nav {
-            background: rgba(19, 46, 29, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
+      .glass-nav {
+        background: rgba(19, 46, 29, 0.9);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
 
-        ::-webkit-scrollbar-track {
-            background: #F4F6F0;
-        }
+      ::-webkit-scrollbar-track {
+        background: #f4f6f0;
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background: #132E1D;
-            border-radius: 3px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background: #132e1d;
+        border-radius: 3px;
+      }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
-        }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4af37;
+      }
 
-        /* Fade transition for automatic slideshow */
-        .slide-fade {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            pointer-events: none;
-        }
+      /* Fade transition for automatic slideshow */
+      .slide-fade {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        pointer-events: none;
+      }
 
-        .slide-fade.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
+      .slide-fade.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
     </style>
-</head>
+  </head>
 
-<body class="overflow-x-hidden w-full">
-
+  <body class="overflow-x-hidden w-full">
     <!-- Audio Background Player (Royalty Free Instrumental Soft Wedding Piano) -->
     <audio id="weddingMusic" loop>
-        <source src="./assets/music/shane-filan-beautiful-in-white-official-video-128-ytshorts.savetube.me.mp3"
-            type="audio/mpeg">
+      <source
+        src="./assets/music/shane-filan-beautiful-in-white-official-video-128-ytshorts.savetube.me.mp3"
+        type="audio/mpeg"
+      />
     </audio>
 
     <!-- Floating Audio Control & Scroll-to-Top Button -->
     <div class="fixed bottom-6 right-4 sm:right-6 z-50 flex flex-col gap-3">
-        <button id="musicToggle"
-            class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gold-400 hover:bg-gold-300 text-emerald-950 flex items-center justify-center shadow-lg transition-transform hover:scale-110 focus:outline-none"
-            aria-label="Toggle Music">
-            <i id="musicIcon" class="fa-solid fa-music text-base sm:text-lg animate-pulse"></i>
-        </button>
-        <button id="scrollTopBtn"
-            class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-emerald-900 hover:bg-emerald-850 text-gold-200 flex items-center justify-center shadow-lg transition-transform hover:scale-110 opacity-0 pointer-events-none transition-opacity duration-300"
-            onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
-            <i class="fa-solid fa-arrow-up text-sm sm:text-base"></i>
-        </button>
+      <button
+        id="musicToggle"
+        class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gold-400 hover:bg-gold-300 text-emerald-950 flex items-center justify-center shadow-lg transition-transform hover:scale-110 focus:outline-none"
+        aria-label="Toggle Music"
+      >
+        <i
+          id="musicIcon"
+          class="fa-solid fa-music text-base sm:text-lg animate-pulse"
+        ></i>
+      </button>
+      <button
+        id="scrollTopBtn"
+        class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-emerald-900 hover:bg-emerald-850 text-gold-200 flex items-center justify-center shadow-lg transition-transform hover:scale-110 opacity-0 pointer-events-none transition-opacity duration-300"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        aria-label="Scroll to top"
+      >
+        <i class="fa-solid fa-arrow-up text-sm sm:text-base"></i>
+      </button>
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 sm:h-20">
-                <div class="flex-shrink-0">
-                    <a href="#"
-                        class="text-base xs:text-lg sm:text-xl font-semibold tracking-wider text-white hover:text-gold-300 transition-colors uppercase">
-                        HẬU <span class="text-gold-400">&</span> LINH
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div
-                        class="ml-10 flex items-baseline space-x-6 text-[11px] font-semibold tracking-widest text-gray-200">
-                        <a href="#home" class="hover:text-gold-300 px-2 py-2 transition-colors">TRANG CHỦ</a>
-                        <a href="#story" class="hover:text-gold-300 px-2 py-2 transition-colors">CÂU CHUYỆN</a>
-                        <a href="#slideshow-section" class="hover:text-gold-300 px-2 py-2 transition-colors">ALBUM
-                            CƯỚI</a>
-                        <a href="#events" class="hover:text-gold-300 px-2 py-2 transition-colors">SỰ KIỆN</a>
-                        <a href="#rsvp"
-                            class="hover:text-gold-400 border border-gold-400/30 px-4 py-2 rounded-full transition-all hover:bg-gold-400/10">XÁC
-                            NHẬN THAM DỰ</a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobileMenuBtn" class="text-gold-300 hover:text-white p-2 focus:outline-none"
-                        aria-label="Toggle Menu">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
+    <nav
+      class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+          <div class="flex-shrink-0">
+            <a
+              href="#"
+              class="text-base xs:text-lg sm:text-xl font-semibold tracking-wider text-white hover:text-gold-300 transition-colors uppercase"
+            >
+              HẬU <span class="text-gold-400">&</span> LINH
+            </a>
+          </div>
+          <div class="hidden md:block">
+            <div
+              class="ml-10 flex items-baseline space-x-6 text-[11px] font-semibold tracking-widest text-gray-200"
+            >
+              <a
+                href="#home"
+                class="hover:text-gold-300 px-2 py-2 transition-colors"
+                >TRANG CHỦ</a
+              >
+              <a
+                href="#story"
+                class="hover:text-gold-300 px-2 py-2 transition-colors"
+                >CÂU CHUYỆN</a
+              >
+              <a
+                href="#slideshow-section"
+                class="hover:text-gold-300 px-2 py-2 transition-colors"
+                >ALBUM CƯỚI</a
+              >
+              <a
+                href="#events"
+                class="hover:text-gold-300 px-2 py-2 transition-colors"
+                >SỰ KIỆN</a
+              >
+              <a
+                href="#rsvp"
+                class="hover:text-gold-400 border border-gold-400/30 px-4 py-2 rounded-full transition-all hover:bg-gold-400/10"
+                >XÁC NHẬN THAM DỰ</a
+              >
             </div>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              id="mobileMenuBtn"
+              class="text-gold-300 hover:text-white p-2 focus:outline-none"
+              aria-label="Toggle Menu"
+            >
+              <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+          </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-emerald-950/95 border-b border-gold-400/20">
-            <div class="px-4 pt-2 pb-4 space-y-1 text-center tracking-widest text-[11px] font-medium text-gray-200">
-                <a href="#home" class="block hover:text-gold-300 py-3 border-b border-emerald-900/50">TRANG CHỦ</a>
-                <a href="#story" class="block hover:text-gold-300 py-3 border-b border-emerald-900/50">CÂU CHUYỆN</a>
-                <a href="#slideshow-section" class="block hover:text-gold-300 py-3 border-b border-emerald-900/50">ALBUM
-                    CƯỚI</a>
-                <a href="#events" class="block hover:text-gold-300 py-3 border-b border-emerald-900/50">SỰ KIỆN</a>
-                <a href="#rsvp" class="block text-gold-300 font-bold py-3">XÁC NHẬN & CHÚC PHÚC</a>
-            </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-emerald-950/95 border-b border-gold-400/20"
+      >
+        <div
+          class="px-4 pt-2 pb-4 space-y-1 text-center tracking-widest text-[11px] font-medium text-gray-200"
+        >
+          <a
+            href="#home"
+            class="block hover:text-gold-300 py-3 border-b border-emerald-900/50"
+            >TRANG CHỦ</a
+          >
+          <a
+            href="#story"
+            class="block hover:text-gold-300 py-3 border-b border-emerald-900/50"
+            >CÂU CHUYỆN</a
+          >
+          <a
+            href="#slideshow-section"
+            class="block hover:text-gold-300 py-3 border-b border-emerald-900/50"
+            >ALBUM CƯỚI</a
+          >
+          <a
+            href="#events"
+            class="block hover:text-gold-300 py-3 border-b border-emerald-900/50"
+            >SỰ KIỆN</a
+          >
+          <a href="#rsvp" class="block text-gold-300 font-bold py-3"
+            >XÁC NHẬN & CHÚC PHÚC</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero Banner / Cover Section -->
-    <section id="home"
-        class="relative min-h-screen pt-20 md:pt-28 flex flex-col items-center justify-center bg-emerald-950 overflow-hidden px-4 sm:px-6 lg:px-8">
-        <!-- Botanical Leaf Overlays -->
-        <div class="absolute inset-0 opacity-15 pointer-events-none bg-cover bg-center"
-            style="background-image: url('./assets/images/backgrounds/bg-1.jpeg'); mix-blend-mode: overlay;">
-        </div>
+    <section
+      id="home"
+      class="relative min-h-screen pt-20 md:pt-28 flex flex-col items-center justify-center bg-emerald-950 overflow-hidden px-4 sm:px-6 lg:px-8"
+    >
+      <!-- Botanical Leaf Overlays -->
+      <div
+        class="absolute inset-0 opacity-15 pointer-events-none bg-cover bg-center"
+        style="
+          background-image: url(&quot;./assets/images/backgrounds/bg-1.jpeg&quot;);
+          mix-blend-mode: overlay;
+        "
+      ></div>
 
-        <!-- Luxury ambient glowing background -->
+      <!-- Luxury ambient glowing background -->
+      <div
+        class="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-emerald-800/30 blur-[100px] sm:blur-[120px] rounded-full -top-20 -left-20 sm:-top-40 sm:-left-40 pointer-events-none"
+      ></div>
+      <div
+        class="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-gold-500/10 blur-[120px] sm:blur-[150px] rounded-full -bottom-20 -right-20 sm:-bottom-40 sm:-right-40 pointer-events-none"
+      ></div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto py-8 sm:py-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 w-full"
+      >
+        <!-- Hero Left: Typography & Date -->
         <div
-            class="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-emerald-800/30 blur-[100px] sm:blur-[120px] rounded-full -top-20 -left-20 sm:-top-40 sm:-left-40 pointer-events-none">
-        </div>
-        <div
-            class="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-gold-500/10 blur-[120px] sm:blur-[150px] rounded-full -bottom-20 -right-20 sm:-bottom-40 sm:-right-40 pointer-events-none">
-        </div>
+          class="w-full lg:w-1/2 text-center lg:text-left text-white space-y-4 sm:space-y-6"
+        >
+          <!-- Decade Journey Highlighted Banner & Badge -->
+          <div class="space-y-2 animate__animated animate__fadeInDown">
+            <span
+              class="inline-block text-gold-300 tracking-[0.25em] text-[10px] sm:text-xs font-semibold uppercase"
+            >
+              <i class="fa-solid fa-crown mr-1.5"></i> Save The Date
+            </span>
+            <span
+              class="block text-[11px] sm:text-xs tracking-[0.15em] text-gold-200/90 font-medium uppercase bg-gold-400/10 border border-gold-400/20 px-4 py-1.5 rounded-full w-fit mx-auto lg:mx-0"
+            >
+              <i class="fa-solid fa-hourglass-half mr-1.5"></i> Hành trình 10
+              năm yêu thương
+            </span>
+          </div>
 
-        <div
-            class="relative z-10 max-w-7xl mx-auto py-8 sm:py-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 w-full">
-            <!-- Hero Left: Typography & Date -->
-            <div class="w-full lg:w-1/2 text-center lg:text-left text-white space-y-4 sm:space-y-6">
-                <!-- Decade Journey Highlighted Banner & Badge -->
-                <div class="space-y-2 animate__animated animate__fadeInDown">
-                    <span
-                        class="inline-block text-gold-300 tracking-[0.25em] text-[10px] sm:text-xs font-semibold uppercase">
-                        <i class="fa-solid fa-crown mr-1.5"></i> Save The Date
-                    </span>
-                    <span
-                        class="block text-[11px] sm:text-xs tracking-[0.15em] text-gold-200/90 font-medium uppercase bg-gold-400/10 border border-gold-400/20 px-4 py-1.5 rounded-full w-fit mx-auto lg:mx-0">
-                        <i class="fa-solid fa-hourglass-half mr-1.5"></i> Hành trình 10 năm yêu thương
-                    </span>
-                </div>
-
-                <!-- Couple names with layout safety for high ascenders/descenders -->
-                <div class="space-y-0.5 animate__animated animate__fadeInLeft">
-                    <h1
-                        class="text-6xl sm:text-8xl md:text-9xl font-normal text-gold-300 text-script tracking-wide leading-none">
-                        Hữu Hậu
-                    </h1>
-                    <div class="text-xl sm:text-2xl text-gray-400 font-light tracking-widest py-1 sm:py-2 pl-1">cùng
-                    </div>
-                    <h1
-                        class="text-6xl sm:text-8xl md:text-9xl font-normal text-gold-300 text-script tracking-wide leading-none">
-                        Thuỳ Linh
-                    </h1>
-                </div>
-
-                <p
-                    class="text-gray-300 text-xs sm:text-sm md:text-base tracking-wider font-light max-w-md mx-auto lg:mx-0 animate__animated animate__fadeInUp leading-relaxed">
-                    Một thập kỷ cùng nhau đi qua thăng trầm tuổi trẻ, hôm nay chính thức bước vào chương hạnh
-                    phúc trọn đời.
-                </p>
-
-                <!-- Elegant Date Showcase -->
-                <div class="py-3.5 sm:py-4 border-y border-gold-400/20 max-w-sm mx-auto lg:mx-0">
-                    <div class="flex items-center justify-between text-center px-2">
-                        <div class="flex-1">
-                            <span class="block text-gold-300 font-bold text-xs sm:text-sm tracking-widest">THỨ
-                                SÁU</span>
-                            <span class="text-[9px] sm:text-[10px] text-gray-400 tracking-wider">THÁNG 07</span>
-                        </div>
-                        <div class="flex-1 border-x border-gold-400/30 px-2">
-                            <span class="block text-xl sm:text-2xl font-extrabold text-white tracking-widest">24</span>
-                            <span class="text-[9px] sm:text-[10px] text-gold-300 font-semibold tracking-widest">NĂM
-                                2026</span>
-                        </div>
-                        <div class="flex-1">
-                            <span class="block text-white font-bold text-xs sm:text-sm tracking-widest">11:00 AM</span>
-                            <span class="text-[9px] sm:text-[10px] text-gray-400 tracking-wider">HỒ CHÍ MINH</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-2 sm:pt-4 flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
-                    <a href="#rsvp"
-                        class="bg-gold-gradient text-emerald-950 font-bold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-gold-500/20 hover:scale-105 transition-all text-[10px] sm:text-xs tracking-widest uppercase">
-                        GỬI LỜI CHÚC & RSVP
-                    </a>
-                    <a href="#events"
-                        class="border border-white/30 text-white hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all text-[10px] sm:text-xs tracking-widest uppercase">
-                        XEM BẢN ĐỒ TIỆC
-                    </a>
-                </div>
+          <!-- Couple names with layout safety for high ascenders/descenders -->
+          <div class="space-y-0.5 animate__animated animate__fadeInLeft">
+            <h1
+              class="text-6xl sm:text-8xl md:text-9xl font-normal text-gold-300 text-script tracking-wide leading-none"
+            >
+              Hữu Hậu
+            </h1>
+            <div
+              class="text-xl sm:text-2xl text-gray-400 font-light tracking-widest py-1 sm:py-2 pl-1"
+            >
+              cùng
             </div>
+            <h1
+              class="text-6xl sm:text-8xl md:text-9xl font-normal text-gold-300 text-script tracking-wide leading-none"
+            >
+              Thuỳ Linh
+            </h1>
+          </div>
 
-            <!-- Hero Right: Portrait frame with secure relative bounds -->
-            <div class="w-full lg:w-1/2 flex justify-center mt-4 lg:mt-0">
-                <div class="relative group">
-                    <div
-                        class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[9/16] h-[400px] xs:h-[440px] sm:h-[540px] md:h-[590px] w-auto">
-                        <!-- Main bridal portrait photo -->
-                        <img loading="lazy" src="./assets/images/1.JPG" alt="Hữu Hậu & Thuỳ Linh"
-                            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <!-- Decorative Floating Heart Badge -->
-                    <div
-                        class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-emerald-900 text-gold-300 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg transform rotate-12 border border-gold-400/30">
-                        <i class="fa-solid fa-heart text-base sm:text-lg animate-pulse"></i>
-                    </div>
-                </div>
+          <p
+            class="text-gray-300 text-xs sm:text-sm md:text-base tracking-wider font-light max-w-md mx-auto lg:mx-0 animate__animated animate__fadeInUp leading-relaxed"
+          >
+            Hành trình 10 năm - bao nhiêu vui buồn, bao lần sóng gió, giờ đây
+            chúng ta đã thực sự là một nhà. Không chỉ là đám cưới, đây là lời
+            hứa cho cả quãng đời còn lại
+          </p>
+
+          <!-- Elegant Date Showcase -->
+          <div
+            class="py-3.5 sm:py-4 border-y border-gold-400/20 max-w-sm mx-auto lg:mx-0"
+          >
+            <div class="flex items-center justify-between text-center px-2">
+              <div class="flex-1">
+                <span
+                  class="block text-gold-300 font-bold text-xs sm:text-sm tracking-widest"
+                  >THỨ SÁU</span
+                >
+                <span
+                  class="text-[9px] sm:text-[10px] text-gray-400 tracking-wider"
+                  >THÁNG 07</span
+                >
+              </div>
+              <div class="flex-1 border-x border-gold-400/30 px-2">
+                <span
+                  class="block text-xl sm:text-2xl font-extrabold text-white tracking-widest"
+                  >24</span
+                >
+                <span
+                  class="text-[9px] sm:text-[10px] text-gold-300 font-semibold tracking-widest"
+                  >NĂM 2026</span
+                >
+              </div>
+              <div class="flex-1">
+                <span
+                  class="block text-white font-bold text-xs sm:text-sm tracking-widest"
+                  >17:00 PM</span
+                >
+                <span
+                  class="text-[9px] sm:text-[10px] text-gray-400 tracking-wider"
+                  >HỒ CHÍ MINH</span
+                >
+              </div>
             </div>
+          </div>
+
+          <div
+            class="pt-2 sm:pt-4 flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4"
+          >
+            <a
+              href="#rsvp"
+              class="bg-gold-gradient text-emerald-950 font-bold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-gold-500/20 hover:scale-105 transition-all text-[10px] sm:text-xs tracking-widest uppercase"
+            >
+              GỬI LỜI CHÚC & RSVP
+            </a>
+            <a
+              href="#events"
+              class="border border-white/30 text-white hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all text-[10px] sm:text-xs tracking-widest uppercase"
+            >
+              XEM BẢN ĐỒ TIỆC
+            </a>
+          </div>
         </div>
 
-        <!-- Elegant wave section transition curve -->
-        <!-- <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+        <!-- Hero Right: Portrait frame with secure relative bounds -->
+        <div class="w-full lg:w-1/2 flex justify-center mt-4 lg:mt-0">
+          <div class="relative group">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[9/16] h-[400px] xs:h-[440px] sm:h-[540px] md:h-[590px] w-auto"
+            >
+              <!-- Main bridal portrait photo -->
+              <img
+                loading="lazy"
+                src="./assets/images/1.JPG"
+                alt="Hữu Hậu & Thuỳ Linh"
+                class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <!-- Decorative Floating Heart Badge -->
+            <div
+              class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-emerald-900 text-gold-300 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg transform rotate-12 border border-gold-400/30"
+            >
+              <i
+                class="fa-solid fa-heart text-base sm:text-lg animate-pulse"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Elegant wave section transition curve -->
+      <!-- <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
             <svg class="relative block w-full h-[30px] sm:h-[50px]" viewBox="0 0 1200 1200" preserveAspectRatio="none">
                 <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,123.6,1064.67,113.6,985.66,92.83Z" fill="#F4F6F0"></path>
             </svg>
@@ -302,1109 +423,1625 @@
 
     <!-- Live Countdown Section -->
     <section class="relative py-4 sm:py-6 bg-[#F4F6F0] z-30">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div
-                class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl border border-emerald-900/5 -mt-12 sm:-mt-20 relative overflow-hidden">
-                <!-- Inner fine framing border -->
-                <div class="absolute inset-2 border border-gold-400/20 rounded-xl sm:rounded-2xl pointer-events-none">
-                </div>
-                <div class="relative text-center space-y-3 sm:space-y-4">
-                    <h3 class="text-[10px] sm:text-xs font-bold text-emerald-950 uppercase tracking-[0.18em]">Thời khắc
-                        hạnh phúc đang đến gần</h3>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div
+          class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl border border-emerald-900/5 -mt-12 sm:-mt-20 relative overflow-hidden"
+        >
+          <!-- Inner fine framing border -->
+          <div
+            class="absolute inset-2 border border-gold-400/20 rounded-xl sm:rounded-2xl pointer-events-none"
+          ></div>
+          <div class="relative text-center space-y-3 sm:space-y-4">
+            <h3
+              class="text-[10px] sm:text-xs font-bold text-emerald-950 uppercase tracking-[0.18em]"
+            >
+              Thời khắc hạnh phúc đang đến gần
+            </h3>
 
-                    <div class="grid grid-cols-4 gap-2 xs:gap-3 sm:gap-6 max-w-xl mx-auto">
-                        <div class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner">
-                            <span id="days"
-                                class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300">00</span>
-                            <span
-                                class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1">Ngày</span>
-                        </div>
-                        <div class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner">
-                            <span id="hours"
-                                class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300">00</span>
-                            <span
-                                class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1">Giờ</span>
-                        </div>
-                        <div class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner">
-                            <span id="minutes"
-                                class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300">00</span>
-                            <span
-                                class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1">Phút</span>
-                        </div>
-                        <div class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner">
-                            <span id="seconds"
-                                class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300">00</span>
-                            <span
-                                class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1">Giây</span>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="grid grid-cols-4 gap-2 xs:gap-3 sm:gap-6 max-w-xl mx-auto"
+            >
+              <div
+                class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner"
+              >
+                <span
+                  id="days"
+                  class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300"
+                  >00</span
+                >
+                <span
+                  class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1"
+                  >Ngày</span
+                >
+              </div>
+              <div
+                class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner"
+              >
+                <span
+                  id="hours"
+                  class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300"
+                  >00</span
+                >
+                <span
+                  class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1"
+                  >Giờ</span
+                >
+              </div>
+              <div
+                class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner"
+              >
+                <span
+                  id="minutes"
+                  class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300"
+                  >00</span
+                >
+                <span
+                  class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1"
+                  >Phút</span
+                >
+              </div>
+              <div
+                class="bg-emerald-950 text-white rounded-lg sm:rounded-xl p-2 sm:p-5 shadow-inner"
+              >
+                <span
+                  id="seconds"
+                  class="block text-lg xs:text-xl sm:text-3xl font-bold text-gold-300"
+                  >00</span
+                >
+                <span
+                  class="text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5 sm:mt-1"
+                  >Giây</span
+                >
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Our Story Section -->
     <section id="story" class="py-14 sm:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-1 mb-12 sm:mb-16">
-                <span class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block">Chuyện Tình Yêu Thơ
-                    Mộng</span>
-                <h2 class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest">HÀNH TRÌNH GẶP GỠ
-                </h2>
-                <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
-            </div>
-
-            <!-- Story Grid -->
-            <div class="space-y-12 sm:space-y-20 max-w-5xl mx-auto">
-                <!-- Story Part 1: Gặp Gỡ -->
-                <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-10 lg:gap-16">
-                    <div class="w-full md:w-1/2 order-2 md:order-1 text-center md:text-left">
-                        <div class="space-y-3">
-                            <span class="text-4xl sm:text-5xl font-normal text-gold-400 text-script block">Mua thu long
-                                gio tai Sai Gon</span>
-                            <h3 class="text-lg sm:text-xl font-bold text-emerald-950">Chạm Mắt Lần Đầu Tiên</h3>
-                            <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed text-justify">
-                                Chúng mình gặp nhau lần đầu tiên vào một ngày thu trong vắt. Chẳng có kịch bản định sẵn
-                                hay những lời thoại lãng mạn như phim ảnh, chỉ có một cái nhìn bẽn lẽn nhưng đầy ấm áp
-                                mở đầu cho cuộc trò chuyện kéo dài mãi không chán. Khoảnh khắc ấy, cả hai tựa như đã
-                                thuộc về nhau từ trước.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 order-1 md:order-2">
-                        <div
-                            class="relative rounded-2xl overflow-hidden shadow-lg border border-gold-300/30 aspect-[4/3] group max-w-md mx-auto md:max-w-none">
-                            <img loading="lazy" src="./assets/images/backgrounds/bg-2.jpeg" alt="Gặp gỡ"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div
-                                class="absolute bottom-3 left-3 bg-emerald-950/90 text-gold-300 text-[9px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full">
-                                <i class="fa-solid fa-hourglass-start mr-1"></i> Ngày quen nhau
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story Part 2: Cầu Hôn -->
-                <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-10 lg:gap-16">
-                    <div class="w-full md:w-1/2">
-                        <div
-                            class="relative rounded-2xl overflow-hidden shadow-lg border border-gold-300/30 aspect-[4/3] group max-w-md mx-auto md:max-w-none">
-                            <img loading="lazy" src="./assets/images/backgrounds/bg-3.jpeg" alt="Cầu hôn"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div
-                                class="absolute bottom-3 left-3 bg-emerald-950/90 text-gold-300 text-[9px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full">
-                                <i class="fa-solid fa-ring mr-1"></i> Khoảnh khắc định mệnh
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 text-center md:text-left">
-                        <div class="space-y-3 mt-4 md:mt-0">
-                            <span class="text-4xl sm:text-5xl font-normal text-gold-400 text-script block">Cái gật đầu
-                                hạnh phúc</span>
-                            <h3 class="text-lg sm:text-xl font-bold text-emerald-950">Lời Thề Nguyện Trăm Năm</h3>
-                            <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed text-justify">
-                                Một buổi chiều lộng gió, chiếc nhẫn lấp lánh nhẹ nhàng trao lên ngón tay thon thả của
-                                Linh cùng nụ cười rạng rỡ của cả hai bạn. Cái gật đầu khẽ của Linh và những giọt nước
-                                mắt hạnh phúc chính là lời đồng ý ngọt ngào nhất, đưa hai cuộc đời hòa vào làm một trên
-                                chặng đường thăng hoa kế tiếp.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-1 mb-12 sm:mb-16">
+          <span
+            class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block"
+            >Chuyện Tình Yêu Thơ Mộng</span
+          >
+          <h2
+            class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest"
+          >
+            HÀNH TRÌNH GẶP GỠ
+          </h2>
+          <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
         </div>
+
+        <!-- Story Grid -->
+        <div class="space-y-12 sm:space-y-20 max-w-5xl mx-auto">
+          <!-- Story Part 1: Gặp Gỡ -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-6 sm:gap-10 lg:gap-16"
+          >
+            <div
+              class="w-full md:w-1/2 order-2 md:order-1 text-center md:text-left"
+            >
+              <div class="space-y-3">
+                <span
+                  class="text-4xl sm:text-5xl font-normal text-gold-400 text-script block"
+                  >Chạm Mắt Lần Đầu Tiên</span
+                >
+                <!-- <h3 class="text-lg sm:text-xl font-bold text-emerald-950">
+                  Chạm Mắt Lần Đầu Tiên
+                </h3> -->
+                <p
+                  class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed text-justify"
+                >
+                  Tháng 8/2017 - ngày nhập học đầu tiên, chẳng lời lãng mạn, chỉ
+                  là hai đứa học sinh vô tình chung bước trên hành lang. Thế mà
+                  10 năm sau, chính cái "vô tình" ấy đã dẫn lối cho một mái nhà
+                </p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 order-1 md:order-2">
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-lg border border-gold-300/30 aspect-[4/3] group max-w-md mx-auto md:max-w-none"
+              >
+                <img
+                  loading="lazy"
+                  src="./assets/images/backgrounds/bg-2.jpeg"
+                  alt="Gặp gỡ"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div
+                  class="absolute bottom-3 left-3 bg-emerald-950/90 text-gold-300 text-[9px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                >
+                  <i class="fa-solid fa-hourglass-start mr-1"></i> Ngày quen
+                  nhau
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Part 2: Cầu Hôn -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-6 sm:gap-10 lg:gap-16"
+          >
+            <div class="w-full md:w-1/2">
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-lg border border-gold-300/30 aspect-[4/3] group max-w-md mx-auto md:max-w-none"
+              >
+                <img
+                  loading="lazy"
+                  src="./assets/images/backgrounds/bg-3.jpeg"
+                  alt="Cầu hôn"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div
+                  class="absolute bottom-3 left-3 bg-emerald-950/90 text-gold-300 text-[9px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                >
+                  <i class="fa-solid fa-ring mr-1"></i> Khoảnh khắc định mệnh
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 text-center md:text-left">
+              <div class="space-y-3 mt-4 md:mt-0">
+                <span
+                  class="text-4xl sm:text-5xl font-normal text-gold-400 text-script block"
+                  >Cái gật đầu hạnh phúc</span
+                >
+                <!-- <h3 class="text-lg sm:text-xl font-bold text-emerald-950">
+                  Lời Thề Nguyện Trăm Năm
+                </h3> -->
+                <p
+                  class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed text-justify"
+                >
+                  Một buổi chiều lộng gió, chiếc nhẫn lấp lánh nhẹ nhàng trao
+                  lên ngón tay thon thả của Linh cùng nụ cười rạng rỡ của cả hai
+                  bạn. Cái gật đầu khẽ của Linh và những giọt nước mắt hạnh phúc
+                  chính là lời đồng ý ngọt ngào nhất, đưa hai cuộc đời hòa vào
+                  làm một trên chặng đường thăng hoa kế tiếp.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Auto-play Slideshow Gallery Section -->
-    <section id="slideshow-section" class="py-14 sm:py-24 bg-emerald-950 text-white relative px-4 sm:px-6">
-        <div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center"
-            style="background-image: url('./assets//images/backgrounds/bg-4.jpeg');">
+    <section
+      id="slideshow-section"
+      class="py-14 sm:py-24 bg-emerald-950 text-white relative px-4 sm:px-6"
+    >
+      <div
+        class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center"
+        style="
+          background-image: url(&quot;./assets//images/backgrounds/bg-4.jpeg&quot;);
+        "
+      ></div>
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <div class="text-center space-y-1 mb-10 sm:mb-12">
+          <span
+            class="text-5xl sm:text-7xl font-normal text-gold-300 text-script block"
+            >Love in the Frame</span
+          >
+          <h2
+            class="text-xl sm:text-2xl font-bold text-white uppercase tracking-widest"
+          >
+            ALBUM TRÌNH CHIẾU TỰ ĐỘNG
+          </h2>
+          <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
         </div>
-        <div class="relative z-10 max-w-5xl mx-auto">
 
-            <div class="text-center space-y-1 mb-10 sm:mb-12">
-                <span class="text-5xl sm:text-7xl font-normal text-gold-300 text-script block">Love in the Frame</span>
-                <h2 class="text-xl sm:text-2xl font-bold text-white uppercase tracking-widest">ALBUM TRÌNH CHIẾU TỰ ĐỘNG
-                </h2>
-                <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
-            </div>
-
-            <!-- Auto-Slideshow Container -->
+        <!-- Auto-Slideshow Container -->
+        <div
+          class="relative bg-black/40 rounded-2xl sm:rounded-3xl p-2 sm:p-4 border border-gold-400/20 max-w-3xl mx-auto shadow-2xl overflow-hidden"
+        >
+          <div
+            class="relative aspect-[3/4] sm:aspect-[16/10] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-emerald-900/50"
+          >
+            <!-- Slide 1 (User Photo) -->
             <div
-                class="relative bg-black/40 rounded-2xl sm:rounded-3xl p-2 sm:p-4 border border-gold-400/20 max-w-3xl mx-auto shadow-2xl overflow-hidden">
-                <div
-                    class="relative aspect-[3/4] sm:aspect-[16/10] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-emerald-900/50">
-
-                    <!-- Slide 1 (User Photo) -->
-                    <div class="slideshow-item slide-fade active absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/1.JPG" alt="Slideshow Image 1"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Tác
-                                Phẩm Chính</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Lễ Thành Hôn Trọn Vẹn • Hậu & Linh</h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/2.jpg" alt="Slideshow Image 2"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Kỷ
-                                niệm Sài Gòn</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Nắm Chặt Tay Nhau Đi Khắp Thế Gian</h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/3.jpg" alt="Slideshow Image 3"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Nụ
-                                Cười Rạng Rỡ</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Phút giây hạnh phúc giản dị</h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/4.jpg" alt="Slideshow Image 4"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Kỷ
-                                Vật Trăm Năm</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Chứng nhân cho lời hẹn thề nguyện ước</h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/5.jpg" alt="Slideshow Image 5"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
-                                Vũ Thiên Nhiên</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
-                            </h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 6 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/6.JPG" alt="Slideshow Image 6"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
-                                Vũ Thiên Nhiên</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
-                            </h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 7 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/7.jpg" alt="Slideshow Image 7"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
-                                Vũ Thiên Nhiên</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
-                            </h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 8 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/8.jpg" alt="Slideshow Image 8"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
-                                Vũ Thiên Nhiên</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
-                            </h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 9 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/9.jpg" alt="Slideshow Image 9"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
-                                Vũ Thiên Nhiên</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
-                            </h4>
-                        </div>
-                    </div>
-
-                    <!-- Slide 10 -->
-                    <div class="slideshow-item slide-fade absolute inset-0 w-full h-full">
-                        <img loading="lazy" src="./assets/images/horizontal/10.JPG" alt="Slideshow Image 10"
-                            class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                        </div>
-                        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left">
-                            <span
-                                class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold">Khiêu
-                                Vũ Thiên Nhiên</span>
-                            <h4 class="text-base sm:text-xl font-bold mt-0.5">Hoàng hôn lấp lánh chứng giám hạnh phúc
-                            </h4>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Navigation Controls (Better touch-target sized buttons) -->
-                <button id="prevSlide"
-                    class="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/20 hover:bg-gold-400/80 hover:text-emerald-950 text-white flex items-center justify-center transition-all z-20 focus:outline-none"
-                    aria-label="Previous Slide">
-                    <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
-                </button>
-                <button id="nextSlide"
-                    class="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/20 hover:bg-gold-400/80 hover:text-emerald-950 text-white flex items-center justify-center transition-all z-20 focus:outline-none"
-                    aria-label="Next Slide">
-                    <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
-                </button>
-
-                <!-- Status & Autoplay Indicators (Compact styling on mobile) -->
-                <div
-                    class="absolute top-4 right-4 bg-black/60 px-2.5 py-1.5 rounded-full flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs tracking-wider z-20 border border-white/10">
-                    <span id="slideCounter" class="font-bold text-gold-300">1 / 5</span>
-                    <div class="w-[1px] h-3 bg-white/20"></div>
-                    <button id="playPauseBtn" class="hover:text-gold-300 transition-colors focus:outline-none"
-                        title="Bật/Tạm dừng tự động chạy">
-                        <i id="playPauseIcon" class="fa-solid fa-pause"></i>
-                    </button>
-                </div>
+              class="slideshow-item slide-fade active absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/1.JPG"
+                alt="Slideshow Image 1"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Tác Phẩm Chính</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Lễ Thành Hôn Trọn Vẹn • Hậu & Linh
+                </h4> -->
+              </div>
             </div>
 
-            <!-- Slideshow Progress Bar -->
-            <div class="max-w-3xl mx-auto mt-4 px-1">
-                <div class="w-full bg-white/10 h-[2px] rounded-full overflow-hidden">
-                    <div id="slideshowProgress" class="bg-gold-400 h-full w-1/5 transition-all duration-300"></div>
-                </div>
+            <!-- Slide 2 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/2.jpg"
+                alt="Slideshow Image 2"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Kỷ niệm Sài Gòn</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Nắm Chặt Tay Nhau Đi Khắp Thế Gian
+                </h4> -->
+              </div>
             </div>
 
+            <!-- Slide 3 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/3.jpg"
+                alt="Slideshow Image 3"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Nụ Cười Rạng Rỡ</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Phút giây hạnh phúc giản dị
+                </h4> -->
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/4.jpg"
+                alt="Slideshow Image 4"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Kỷ Vật Trăm Năm</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Chứng nhân cho lời hẹn thề nguyện ước
+                </h4> -->
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/5.jpg"
+                alt="Slideshow Image 5"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Khiêu Vũ Thiên Nhiên</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Hoàng hôn lấp lánh chứng giám hạnh phúc
+                </h4> -->
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/6.JPG"
+                alt="Slideshow Image 6"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Khiêu Vũ Thiên Nhiên</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Hoàng hôn lấp lánh chứng giám hạnh phúc
+                </h4> -->
+              </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/7.jpg"
+                alt="Slideshow Image 7"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Khiêu Vũ Thiên Nhiên</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Hoàng hôn lấp lánh chứng giám hạnh phúc
+                </h4> -->
+              </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/8.jpg"
+                alt="Slideshow Image 8"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Khiêu Vũ Thiên Nhiên</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Hoàng hôn lấp lánh chứng giám hạnh phúc
+                </h4> -->
+              </div>
+            </div>
+
+            <!-- Slide 9 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/9.jpg"
+                alt="Slideshow Image 9"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Khiêu Vũ Thiên Nhiên</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Hoàng hôn lấp lánh chứng giám hạnh phúc
+                </h4> -->
+              </div>
+            </div>
+
+            <!-- Slide 10 -->
+            <div
+              class="slideshow-item slide-fade absolute inset-0 w-full h-full"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/horizontal/10.JPG"
+                alt="Slideshow Image 10"
+                class="w-full h-full object-cover object-center"
+              />
+              <!-- <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+              ></div> -->
+              <div
+                class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-left"
+              >
+                <!-- <span
+                  class="text-gold-300 text-[8px] sm:text-[10px] uppercase tracking-widest font-semibold"
+                  >Khiêu Vũ Thiên Nhiên</span
+                >
+                <h4 class="text-base sm:text-xl font-bold mt-0.5">
+                  Hoàng hôn lấp lánh chứng giám hạnh phúc
+                </h4> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Controls (Better touch-target sized buttons) -->
+          <button
+            id="prevSlide"
+            class="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/20 hover:bg-gold-400/80 hover:text-emerald-950 text-white flex items-center justify-center transition-all z-20 focus:outline-none"
+            aria-label="Previous Slide"
+          >
+            <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
+          </button>
+          <button
+            id="nextSlide"
+            class="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/20 hover:bg-gold-400/80 hover:text-emerald-950 text-white flex items-center justify-center transition-all z-20 focus:outline-none"
+            aria-label="Next Slide"
+          >
+            <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
+          </button>
+
+          <!-- Status & Autoplay Indicators (Compact styling on mobile) -->
+          <div
+            class="absolute top-4 right-4 bg-black/60 px-2.5 py-1.5 rounded-full flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs tracking-wider z-20 border border-white/10"
+          >
+            <span id="slideCounter" class="font-bold text-gold-300">1 / 5</span>
+            <div class="w-[1px] h-3 bg-white/20"></div>
+            <button
+              id="playPauseBtn"
+              class="hover:text-gold-300 transition-colors focus:outline-none"
+              title="Bật/Tạm dừng tự động chạy"
+            >
+              <i id="playPauseIcon" class="fa-solid fa-pause"></i>
+            </button>
+          </div>
         </div>
+
+        <!-- Slideshow Progress Bar -->
+        <div class="max-w-3xl mx-auto mt-4 px-1">
+          <div class="w-full bg-white/10 h-[2px] rounded-full overflow-hidden">
+            <div
+              id="slideshowProgress"
+              class="bg-gold-400 h-full w-1/5 transition-all duration-300"
+            ></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Photo Gallery Grid Section -->
     <section id="gallery" class="py-14 sm:py-24 bg-[#F4F6F0]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-1 mb-12 sm:mb-16">
-                <span class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block">Our Precious
-                    Moments</span>
-                <h2 class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest">THƯ VIỆN ẢNH CƯỚI
-                </h2>
-                <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
-                <p class="text-gray-500 text-[10px] sm:text-xs tracking-wider mt-3 sm:mt-4">Ấn chọn bất kỳ hình ảnh nào
-                    để xem kích thước lớn</p>
-            </div>
-
-            <!-- Elegant Responsive Grid (Perfect aspect ratios on mobile/tablet) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-sm sm:max-w-none mx-auto">
-                <!-- Card 1 (Hữu Hậu & Thuỳ Linh main) -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/1.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/1.JPG" alt="Main wedding photo"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Tác
-                            Phẩm Chính</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Lễ Thành Hôn Ngập Tràn Hạnh Phúc
-                        </h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/2.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/2.JPG" alt="Nắm tay ngọt ngào"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Cộng sự
-                            Trọn đời</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Nắm Chặt Tay Nhau</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/3.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/3.JPG" alt="Nụ cười ngọt ngào"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Yêu
-                            Thương Sâu Sắc</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Nụ Cười Rạng Rỡ Nhất</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/4.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/4.JPG" alt="Nhẫn cưới lãng mạn"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Kỷ Vật
-                            Trăm Năm</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Lời Hẹn Thề Kết Đôi</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/5.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/5.JPG" alt="Không gian tiệc cưới"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Lễ
-                            Đường Lung Linh</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Ấm Áp Ngày Chung Đôi</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/6.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/6.JPG" alt="Khiêu vũ"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Giai
-                            Điệu Tình Yêu</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Khiêu Vũ Dưới Hoàng Hôn</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/7.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/7.JPG" alt="Khiêu vũ"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Giai
-                            Điệu Tình Yêu</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Khiêu Vũ Dưới Hoàng Hôn</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/8.JPG')">
-                    <img loading="lazy" src="./assets/images/vertical/8.JPG" alt="Khiêu vũ"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Giai
-                            Điệu Tình Yêu</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Khiêu Vũ Dưới Hoàng Hôn</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-
-                <!-- Card 9 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
-                    onclick="openLightbox('./assets/images/vertical/9.JPG')">
-                    <img loading="lazy" loading="lazy" src="./assets/images/vertical/9.JPG" alt="Khiêu vũ"
-                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60">
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold">Giai
-                            Điệu Tình Yêu</span>
-                        <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">Khiêu Vũ Dưới Hoàng Hôn</h4>
-                    </div>
-                    <div
-                        class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-1 mb-12 sm:mb-16">
+          <span
+            class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block"
+            >Our Precious Moments</span
+          >
+          <h2
+            class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest"
+          >
+            THƯ VIỆN ẢNH CƯỚI
+          </h2>
+          <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
+          <p
+            class="text-gray-500 text-[10px] sm:text-xs tracking-wider mt-3 sm:mt-4"
+          >
+            Ấn chọn bất kỳ hình ảnh nào để xem kích thước lớn
+          </p>
         </div>
+
+        <!-- Elegant Responsive Grid (Perfect aspect ratios on mobile/tablet) -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-sm sm:max-w-none mx-auto"
+        >
+          <!-- Card 1 (Hữu Hậu & Thuỳ Linh main) -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/1.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/1.JPG"
+              alt="Main wedding photo"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Cám ơn ngày ấy chúng ta đã gặp nhau</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Cám ơn ngày ấy chúng ta đã gặp nhau
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/2.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/2.JPG"
+              alt="Nắm tay ngọt ngào"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Cộng sự Trọn đời</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Nắm Chặt Tay Nhau
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/3.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/3.JPG"
+              alt="Nụ cười ngọt ngào"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Yêu Thương Sâu Sắc</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Nụ Cười Rạng Rỡ Nhất
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/4.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/4.JPG"
+              alt="Nhẫn cưới lãng mạn"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Kỷ Vật Trăm Năm</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Nụ Cười Rạng Rỡ Nhất
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/5.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/5.JPG"
+              alt="Không gian tiệc cưới"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Lễ Đường Lung Linh</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Ấm Áp Ngày Chung Đôi
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/6.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/6.JPG"
+              alt="Khiêu vũ"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Giai Điệu Tình Yêu</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Khiêu Vũ Dưới Hoàng Hôn
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/7.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/7.JPG"
+              alt="Khiêu vũ"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Giai Điệu Tình Yêu</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Khiêu Vũ Dưới Hoàng Hôn
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/8.JPG')"
+          >
+            <img
+              loading="lazy"
+              src="./assets/images/vertical/8.JPG"
+              alt="Khiêu vũ"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Giai Điệu Tình Yêu</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Khiêu Vũ Dưới Hoàng Hôn
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-md border border-white/80 group cursor-pointer aspect-[3/4] transition-all hover:shadow-xl"
+            onclick="openLightbox('./assets/images/vertical/9.JPG')"
+          >
+            <img
+              loading="lazy"
+              loading="lazy"
+              src="./assets/images/vertical/9.JPG"
+              alt="Khiêu vũ"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            <!-- <div
+              class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-transparent to-transparent opacity-60"
+            ></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <span
+                class="text-[8px] sm:text-[9px] uppercase tracking-widest text-gold-300 font-bold"
+                >Giai Điệu Tình Yêu</span
+              >
+              <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">
+                Khiêu Vũ Dưới Hoàng Hôn
+              </h4>
+            </div> -->
+            <div
+              class="absolute top-4 right-4 bg-gold-400 text-emerald-950 w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Lightbox Modal for Gallery View -->
-    <div id="lightbox"
-        class="fixed inset-0 bg-black/95 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
-        onclick="closeLightbox()">
-        <button
-            class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl sm:text-4xl hover:text-gold-300 focus:outline-none"
-            onclick="closeLightbox()">&times;</button>
-        <div class="max-w-4xl max-h-[85vh] p-4 relative" onclick="event.stopPropagation()">
-            <img loading="lazy" id="lightboxImg" src="" alt="Zoomed wedding photo"
-                class="max-w-full max-h-[80vh] rounded-lg shadow-2xl mx-auto object-contain border border-white/10">
-        </div>
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black/95 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+      onclick="closeLightbox()"
+    >
+      <button
+        class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl sm:text-4xl hover:text-gold-300 focus:outline-none"
+        onclick="closeLightbox()"
+      >
+        &times;
+      </button>
+      <div
+        class="max-w-4xl max-h-[85vh] p-4 relative"
+        onclick="event.stopPropagation()"
+      >
+        <img
+          loading="lazy"
+          id="lightboxImg"
+          src=""
+          alt="Zoomed wedding photo"
+          class="max-w-full max-h-[80vh] rounded-lg shadow-2xl mx-auto object-contain border border-white/10"
+        />
+      </div>
     </div>
 
     <!-- Event Details & Map Location -->
     <section id="events" class="py-14 sm:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-1 mb-12 sm:mb-16">
-                <span class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block">Time & Location</span>
-                <h2 class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest">SỰ KIỆN TRỌNG ĐẠI
-                </h2>
-                <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
-            </div>
-
-            <!-- Two Column Event Cards -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 max-w-md lg:max-w-none mx-auto">
-
-                <!-- Event 1: Lễ Vu Quy -->
-                <div
-                    class="bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg border border-gold-400/10 space-y-5 sm:space-y-6 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300">
-                    <div
-                        class="absolute top-0 right-0 bg-gold-400 text-emerald-950 font-bold px-4 sm:px-6 py-1.5 sm:py-2 rounded-bl-2xl sm:rounded-bl-3xl tracking-widest text-[8px] sm:text-[10px]">
-                        NHÀ GÁI
-                    </div>
-
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold-100 flex items-center justify-center text-gold-400 text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-house-user"></i>
-                    </div>
-
-                    <h3 class="text-lg sm:text-2xl font-bold text-emerald-950">Lễ Vu Quy</h3>
-
-                    <div class="space-y-3 text-xs sm:text-sm text-gray-600">
-                        <p class="flex items-start gap-3">
-                            <i class="fa-solid fa-calendar-day text-emerald-900 w-4 text-sm mt-0.5"></i>
-                            <span class="flex-1"><strong>Thứ Sáu, 24 Tháng 07, 2026</strong></span>
-                        </p>
-                        <p class="flex items-start gap-3">
-                            <i class="fa-solid fa-clock text-emerald-900 w-4 text-sm mt-0.5"></i>
-                            <span class="flex-1">08:30 AM (Lễ đón dâu truyền thống)</span>
-                        </p>
-                        <p class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-emerald-900 w-4 text-sm mt-0.5"></i>
-                            <span class="flex-1">Tư gia nhà gái - Quận 3, TP. Hồ Chí Minh</span>
-                        </p>
-                    </div>
-
-                    <div class="h-[1px] bg-gray-200"></div>
-
-                    <!-- Visual route button/map container -->
-                    <div
-                        class="relative w-full h-[180px] sm:h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-inner border border-gray-200">
-                        <img loading="lazy" src="./assets/images/backgrounds/map-1.jpeg" alt="Map Vu Quy"
-                            class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-emerald-950/70 flex flex-col items-center justify-center text-center p-4">
-                            <span
-                                class="text-gold-200 text-[8px] sm:text-[10px] tracking-widest uppercase mb-2 font-semibold">Xem
-                                bản đồ chỉ đường chi tiết</span>
-                            <a href="https://maps.google.com" target="_blank"
-                                class="bg-gold-gradient text-emerald-950 text-[10px] sm:text-xs font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md hover:scale-105 transition-transform tracking-widest uppercase">
-                                <i class="fa-solid fa-route mr-1"></i> Google Maps
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 2: Lễ Thành Hôn -->
-                <div
-                    class="bg-emerald-950 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg border border-gold-400/20 space-y-5 sm:space-y-6 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300">
-                    <div
-                        class="absolute top-0 right-0 bg-gold-400 text-emerald-950 font-bold px-4 sm:px-6 py-1.5 sm:py-2 rounded-bl-2xl sm:rounded-bl-3xl tracking-widest text-[8px] sm:text-[10px]">
-                        NHÀ TRAI / TIỆC CHUNG
-                    </div>
-
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-900 flex items-center justify-center text-gold-300 text-lg sm:text-xl group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-champagne-glasses"></i>
-                    </div>
-
-                    <h3 class="text-lg sm:text-2xl font-bold text-gold-300">Lễ Thành Hôn & Tiệc Cưới</h3>
-
-                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
-                        <p class="flex items-start gap-3">
-                            <i class="fa-solid fa-calendar-day text-gold-400 w-4 text-sm mt-0.5"></i>
-                            <span class="flex-1"><strong>Thứ Sáu, 24 Tháng 07, 2026</strong></span>
-                        </p>
-                        <p class="flex items-start gap-3">
-                            <i class="fa-solid fa-clock text-gold-400 w-4 text-sm mt-0.5"></i>
-                            <span class="flex-1">11:00 AM (Khai mạc tiệc mừng)</span>
-                        </p>
-                        <p class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-gold-400 w-4 text-sm mt-0.5"></i>
-                            <span class="flex-1">Trung tâm hội nghị GEM Center - Quận 1, TP. HCM</span>
-                        </p>
-                    </div>
-
-                    <div class="h-[1px] bg-emerald-900"></div>
-
-                    <!-- Visual GEM Center map image holder -->
-                    <div
-                        class="relative w-full h-[180px] sm:h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-inner border border-emerald-900/30">
-                        <img loading="lazy" src="./assets/images/backgrounds/map-2.jpeg" alt="Map cash"
-                            class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-emerald-950/75 flex flex-col items-center justify-center text-center p-4">
-                            <span
-                                class="text-gold-200 text-[8px] sm:text-[10px] tracking-widest uppercase mb-2 font-semibold">Xem
-                                bản đồ chỉ đường đến GEM Center</span>
-                            <a href="https://maps.google.com" target="_blank"
-                                class="bg-gold-gradient text-emerald-950 text-[10px] sm:text-xs font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md hover:scale-105 transition-transform tracking-widest uppercase">
-                                <i class="fa-solid fa-map-location-dot mr-1"></i> Google Maps
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-1 mb-12 sm:mb-16">
+          <span
+            class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block"
+            >Time & Location</span
+          >
+          <h2
+            class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest"
+          >
+            SỰ KIỆN TRỌNG ĐẠI
+          </h2>
+          <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
         </div>
+
+        <!-- Two Column Event Cards -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 max-w-md lg:max-w-none mx-auto"
+        >
+          <!-- Event 1: Lễ Vu Quy -->
+          <div
+            class="bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg border border-gold-400/10 space-y-5 sm:space-y-6 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300"
+          >
+            <div
+              class="absolute top-0 right-0 bg-gold-400 text-emerald-950 font-bold px-4 sm:px-6 py-1.5 sm:py-2 rounded-bl-2xl sm:rounded-bl-3xl tracking-widest text-[8px] sm:text-[10px]"
+            >
+              NHÀ GÁI
+            </div>
+
+            <div
+              class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold-100 flex items-center justify-center text-gold-400 text-lg sm:text-xl group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-house-user"></i>
+            </div>
+
+            <h3 class="text-lg sm:text-2xl font-bold text-emerald-950">
+              Lễ Vu Quy
+            </h3>
+
+            <div class="space-y-3 text-xs sm:text-sm text-gray-600">
+              <p class="flex items-start gap-3">
+                <i
+                  class="fa-solid fa-calendar-day text-emerald-900 w-4 text-sm mt-0.5"
+                ></i>
+                <span class="flex-1"
+                  ><strong>Thứ Sáu, 24 Tháng 07, 2026</strong></span
+                >
+              </p>
+              <p class="flex items-start gap-3">
+                <i
+                  class="fa-solid fa-clock text-emerald-900 w-4 text-sm mt-0.5"
+                ></i>
+                <span class="flex-1">09:00 AM (Lễ đón dâu truyền thống)</span>
+              </p>
+              <p class="flex items-start gap-3">
+                <i
+                  class="fa-solid fa-location-dot text-emerald-900 w-4 text-sm mt-0.5"
+                ></i>
+                <span class="flex-1"
+                  >Tư gia nhà gái - 698/33 Hương Lộ 2, Quận Bình Tân, TP. Hồ Chí Minh</span
+                >
+              </p>
+            </div>
+
+            <div class="h-[1px] bg-gray-200"></div>
+
+            <!-- Visual route button/map container -->
+            <div
+              class="relative w-full h-[180px] sm:h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-inner border border-gray-200"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/backgrounds/map-1.jpeg"
+                alt="Map Vu Quy"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-emerald-950/70 flex flex-col items-center justify-center text-center p-4"
+              >
+                <span
+                  class="text-gold-200 text-[8px] sm:text-[10px] tracking-widest uppercase mb-2 font-semibold"
+                  >Xem bản đồ chỉ đường chi tiết</span
+                >
+                <a
+                  href="https://maps.app.goo.gl/dQwdDign2fzUgojo6"
+                  target="_blank"
+                  class="bg-gold-gradient text-emerald-950 text-[10px] sm:text-xs font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md hover:scale-105 transition-transform tracking-widest uppercase"
+                >
+                  <i class="fa-solid fa-route mr-1"></i> Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2: Lễ Thành Hôn -->
+          <div
+            class="bg-emerald-950 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg border border-gold-400/20 space-y-5 sm:space-y-6 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300"
+          >
+            <div
+              class="absolute top-0 right-0 bg-gold-400 text-emerald-950 font-bold px-4 sm:px-6 py-1.5 sm:py-2 rounded-bl-2xl sm:rounded-bl-3xl tracking-widest text-[8px] sm:text-[10px]"
+            >
+              NHÀ TRAI / TIỆC CHUNG
+            </div>
+
+            <div
+              class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-900 flex items-center justify-center text-gold-300 text-lg sm:text-xl group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+
+            <h3 class="text-lg sm:text-2xl font-bold text-gold-300">
+              Lễ Thành Hôn & Tiệc Cưới
+            </h3>
+
+            <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+              <p class="flex items-start gap-3">
+                <i
+                  class="fa-solid fa-calendar-day text-gold-400 w-4 text-sm mt-0.5"
+                ></i>
+                <span class="flex-1"
+                  ><strong>Thứ Sáu, 24 Tháng 07, 2026</strong></span
+                >
+              </p>
+              <p class="flex items-start gap-3">
+                <i
+                  class="fa-solid fa-clock text-gold-400 w-4 text-sm mt-0.5"
+                ></i>
+                <span class="flex-1">17:00 PM (Khai mạc tiệc mừng)</span>
+              </p>
+              <p class="flex items-start gap-3">
+                <i
+                  class="fa-solid fa-location-dot text-gold-400 w-4 text-sm mt-0.5"
+                ></i>
+                <span class="flex-1"
+                  >Trung Tâm Hội Nghị Tiệc Cưới Diamond Place II - Âu Cơ</span
+                >
+              </p>
+            </div>
+
+            <div class="h-[1px] bg-emerald-900"></div>
+
+            <!-- Visual GEM Center map image holder -->
+            <div
+              class="relative w-full h-[180px] sm:h-[200px] rounded-xl sm:rounded-2xl overflow-hidden shadow-inner border border-emerald-900/30"
+            >
+              <img
+                loading="lazy"
+                src="./assets/images/backgrounds/map-2.jpeg"
+                alt="Map cash"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-emerald-950/75 flex flex-col items-center justify-center text-center p-4"
+              >
+                <span
+                  class="text-gold-200 text-[8px] sm:text-[10px] tracking-widest uppercase mb-2 font-semibold"
+                  >Xem bản đồ chỉ đường đến Diamond Place II</span
+                >
+                <a
+                  href="https://maps.app.goo.gl/aKELEqg8UB6GjN7w7"
+                  target="_blank"
+                  class="bg-gold-gradient text-emerald-950 text-[10px] sm:text-xs font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md hover:scale-105 transition-transform tracking-widest uppercase"
+                >
+                  <i class="fa-solid fa-map-location-dot mr-1"></i> Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- RSVP and Wishing Wall Section -->
     <section id="rsvp" class="py-14 sm:py-24 bg-[#F4F6F0] relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-1 mb-12 sm:mb-16">
-                <span class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block">RSVP & Wishes</span>
-                <h2 class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest">PHẢN HỒI & CHÚC
-                    PHÚC</h2>
-                <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-md lg:max-w-none mx-auto items-stretch">
-
-                <!-- RSVP Form (Left) -->
-                <div
-                    class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl border border-emerald-900/5 flex flex-col justify-between">
-                    <div class="space-y-3 mb-6">
-                        <h3 class="text-lg sm:text-2xl font-bold text-emerald-950 font-sans">Xác Nhận Sự Hiện Diện</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Vui lòng phản hồi trước ngày
-                            <strong>15.07.2026</strong> để ban tổ chức chuẩn bị đón tiếp một cách trọn vẹn nhất.
-                        </p>
-                    </div>
-
-                    <form id="rsvpForm" class="space-y-4">
-                        <div>
-                            <label
-                                class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
-                                for="guestName">Họ & Tên của bạn *</label>
-                            <input
-                                class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
-                                id="guestName" type="text" placeholder="Ví dụ: Nguyễn Văn A" required>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label
-                                    class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
-                                    for="guestPhone">Số điện thoại *</label>
-                                <input
-                                    class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
-                                    id="guestPhone" type="tel" placeholder="Nhập SĐT của bạn" required>
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
-                                    for="guestRelation">Bạn là ai? *</label>
-                                <select
-                                    class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
-                                    id="guestRelation" required>
-                                    <option value="" disabled selected>Chọn mối quan hệ</option>
-                                    <option value="Bạn Chú Rể">Bạn Chú Rể</option>
-                                    <option value="Bạn Cô Dâu">Bạn Cô Dâu</option>
-                                    <option value="Đồng Nghiệp">Đồng Nghiệp</option>
-                                    <option value="Họ Hàng / Gia Đình">Họ Hàng / Gia Đình</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label
-                                class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5">Sự
-                                hiện diện *</label>
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <label
-                                    class="flex-1 flex items-center justify-center gap-2 bg-gray-50 border border-emerald-900/10 hover:border-gold-400 p-2.5 sm:p-3 rounded-lg sm:rounded-xl cursor-pointer text-xs sm:text-sm font-semibold transition-all">
-                                    <input type="radio" name="attendance" value="Sẽ tham dự" class="accent-gold-400"
-                                        required checked> Sẽ Tham Dự
-                                </label>
-                                <label
-                                    class="flex-1 flex items-center justify-center gap-2 bg-gray-50 border border-emerald-900/10 hover:border-gold-400 p-2.5 sm:p-3 rounded-lg sm:rounded-xl cursor-pointer text-xs sm:text-sm font-semibold transition-all">
-                                    <input type="radio" name="attendance" value="Tiếc quá, không thể tham dự"
-                                        class="accent-gold-400"> Tiếc Lắm, Vắng Mặt
-                                </label>
-                            </div>
-                        </div>
-
-                        <div id="additionalGuestsWrap">
-                            <label
-                                class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
-                                for="guestCount">Số lượng người đi cùng</label>
-                            <select
-                                class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
-                                id="guestCount">
-                                <option value="1">Mình tôi (1 người)</option>
-                                <option value="2">Đi 2 người</option>
-                                <option value="3">Đi 3 người</option>
-                                <option value="4+">Cả gia đình</option>
-                            </select>
-                        </div>
-
-                        <button
-                            class="w-full bg-emerald-gradient text-white hover:text-gold-300 font-bold py-3.5 sm:py-4 rounded-lg sm:rounded-xl shadow-lg transition-transform hover:scale-[1.01] tracking-widest text-[10px] sm:text-xs uppercase focus:outline-none"
-                            type="submit">
-                            <i class="fa-solid fa-paper-plane mr-2"></i> Gửi xác nhận RSVP
-                        </button>
-                    </form>
-
-                    <!-- Mừng cưới Toggle Drawer -->
-                    <div class="mt-5 border-t border-gray-100 pt-5">
-                        <button onclick="toggleGiftDrawer()"
-                            class="w-full border border-gold-400 text-emerald-950 hover:bg-gold-400 hover:text-emerald-950 font-bold py-3 sm:py-3.5 rounded-lg sm:rounded-xl text-[9px] sm:text-[10px] tracking-widest transition-all uppercase focus:outline-none">
-                            <i class="fa-solid fa-gift mr-1.5"></i> Mở phong bao mừng cưới (QR Bank)
-                        </button>
-
-                        <div id="giftDrawer" class="hidden mt-4 space-y-4 animate__animated animate__fadeIn">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div
-                                    class="bg-gray-50 p-4 rounded-xl sm:rounded-2xl border border-gold-400/30 text-center space-y-2 shadow-sm">
-                                    <span
-                                        class="block text-[9px] font-bold text-emerald-950 uppercase tracking-widest">CHÚ
-                                        RỂ HỮU HẬU</span>
-                                    <img loading="lazy"
-                                        src="https://placehold.co/200x200/132E1D/C5A880?text=QR+Groom+Bank"
-                                        alt="QR Groom Banking"
-                                        class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl border border-gold-400/10">
-                                    <div class="text-[10px] sm:text-[11px] text-gray-500 space-y-0.5">
-                                        <p class="font-bold text-emerald-950">MB Bank</p>
-                                        <p>STK: 0909123456</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="bg-gray-50 p-4 rounded-xl sm:rounded-2xl border border-gold-400/30 text-center space-y-2 shadow-sm">
-                                    <span
-                                        class="block text-[9px] font-bold text-emerald-950 uppercase tracking-widest">CÔ
-                                        DÂU THUỲ LINH</span>
-                                    <img loading="lazy"
-                                        src="https://placehold.co/200x200/132E1D/C5A880?text=QR+Bride+Bank"
-                                        alt="QR Bride Banking"
-                                        class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl border border-gold-400/10">
-                                    <div class="text-[10px] sm:text-[11px] text-gray-500 space-y-0.5">
-                                        <p class="font-bold text-emerald-950">Techcombank</p>
-                                        <p>STK: 0909654321</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wishing Wall (Right) -->
-                <div class="flex flex-col justify-between h-full">
-                    <div
-                        class="bg-emerald-950 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl border border-gold-400/20 flex-1 flex flex-col justify-between min-h-[480px]">
-                        <div class="space-y-4">
-                            <h3 class="text-lg sm:text-2xl font-bold text-gold-300 flex items-center gap-2 font-sans">
-                                <i class="fa-solid fa-quote-left text-sm sm:text-lg"></i> Bức Tường Chúc Phúc
-                            </h3>
-                            <p class="text-gray-300 text-xs sm:text-sm">Gửi gắm lời chúc ý nghĩa của quý khách trực tiếp
-                                lên tường để lưu giữ những kỷ niệm quý giá.</p>
-
-                            <!-- Scrollable Wishing Wall Content (JS Hydrated) -->
-                            <div id="wishesContainer"
-                                class="space-y-3 max-h-[250px] sm:max-h-[280px] overflow-y-auto pr-1 scrollbar-thin">
-                                <!-- Wishing cards appended here -->
-                            </div>
-                        </div>
-
-                        <!-- Wish Input Box -->
-                        <div class="mt-5 border-t border-gold-400/10 pt-4 space-y-3">
-                            <div class="flex gap-2">
-                                <input id="wisherName" type="text"
-                                    class="bg-emerald-900 border border-gold-400/20 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs text-white w-1/3 focus:outline-none focus:ring-1 focus:ring-gold-400"
-                                    placeholder="Tên bạn">
-                                <input id="wisherText" type="text"
-                                    class="bg-emerald-900 border border-gold-400/20 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs text-white w-2/3 focus:outline-none focus:ring-1 focus:ring-gold-400"
-                                    placeholder="Lời chúc ngọt ngào...">
-                            </div>
-                            <button onclick="postWish()"
-                                class="w-full bg-gold-gradient text-emerald-950 font-bold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs transition-transform hover:scale-105 tracking-widest uppercase focus:outline-none">
-                                Gửi lời chúc mừng <i class="fa-solid fa-heart ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-1 mb-12 sm:mb-16">
+          <span
+            class="text-5xl sm:text-7xl font-normal text-gold-500 text-script block"
+            >RSVP & Wishes</span
+          >
+          <h2
+            class="text-xl sm:text-2xl font-bold text-emerald-950 uppercase tracking-widest"
+          >
+            PHẢN HỒI & CHÚC PHÚC
+          </h2>
+          <div class="w-12 h-[2px] bg-gold-400 mx-auto mt-2"></div>
         </div>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-md lg:max-w-none mx-auto items-stretch"
+        >
+          <!-- RSVP Form (Left) -->
+          <div
+            class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl border border-emerald-900/5 flex flex-col justify-between"
+          >
+            <div class="space-y-3 mb-6">
+              <h3
+                class="text-lg sm:text-2xl font-bold text-emerald-950 font-sans"
+              >
+                Xác Nhận Sự Hiện Diện
+              </h3>
+              <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
+                Vui lòng phản hồi trước ngày <strong>15.07.2026</strong> để ban
+                tổ chức chuẩn bị đón tiếp một cách trọn vẹn nhất.
+              </p>
+            </div>
+
+            <form id="rsvpForm" class="space-y-4">
+              <div>
+                <label
+                  class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
+                  for="guestName"
+                  >Họ & Tên của bạn *</label
+                >
+                <input
+                  class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
+                  id="guestName"
+                  type="text"
+                  placeholder="Ví dụ: Nguyễn Văn A"
+                  required
+                />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
+                    for="guestPhone"
+                    >Số điện thoại *</label
+                  >
+                  <input
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
+                    id="guestPhone"
+                    type="tel"
+                    placeholder="Nhập SĐT của bạn"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
+                    for="guestRelation"
+                    >Bạn là ai? *</label
+                  >
+                  <select
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
+                    id="guestRelation"
+                    required
+                  >
+                    <option value="" disabled selected>Chọn mối quan hệ</option>
+                    <option value="Bạn Chú Rể">Bạn Chú Rể</option>
+                    <option value="Bạn Cô Dâu">Bạn Cô Dâu</option>
+                    <option value="Đồng Nghiệp">Đồng Nghiệp</option>
+                    <option value="Họ Hàng / Gia Đình">
+                      Họ Hàng / Gia Đình
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
+                  >Sự hiện diện *</label
+                >
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <label
+                    class="flex-1 flex items-center justify-center gap-2 bg-gray-50 border border-emerald-900/10 hover:border-gold-400 p-2.5 sm:p-3 rounded-lg sm:rounded-xl cursor-pointer text-xs sm:text-sm font-semibold transition-all"
+                  >
+                    <input
+                      type="radio"
+                      name="attendance"
+                      value="Sẽ tham dự"
+                      class="accent-gold-400"
+                      required
+                      checked
+                    />
+                    Sẽ Tham Dự
+                  </label>
+                  <label
+                    class="flex-1 flex items-center justify-center gap-2 bg-gray-50 border border-emerald-900/10 hover:border-gold-400 p-2.5 sm:p-3 rounded-lg sm:rounded-xl cursor-pointer text-xs sm:text-sm font-semibold transition-all"
+                  >
+                    <input
+                      type="radio"
+                      name="attendance"
+                      value="Tiếc quá, không thể tham dự"
+                      class="accent-gold-400"
+                    />
+                    Tiếc Lắm, Vắng Mặt
+                  </label>
+                </div>
+              </div>
+
+              <div id="additionalGuestsWrap">
+                <label
+                  class="block text-[8px] sm:text-[10px] font-bold text-emerald-950 uppercase tracking-widest mb-1.5"
+                  for="guestCount"
+                  >Số lượng người đi cùng</label
+                >
+                <select
+                  class="w-full bg-gray-50 border border-gray-300 rounded-lg sm:rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
+                  id="guestCount"
+                >
+                  <option value="1">Mình tôi (1 người)</option>
+                  <option value="2">Đi 2 người</option>
+                  <option value="3">Đi 3 người</option>
+                  <option value="4+">Cả gia đình</option>
+                </select>
+              </div>
+
+              <button
+                class="w-full bg-emerald-gradient text-white hover:text-gold-300 font-bold py-3.5 sm:py-4 rounded-lg sm:rounded-xl shadow-lg transition-transform hover:scale-[1.01] tracking-widest text-[10px] sm:text-xs uppercase focus:outline-none"
+                type="submit"
+              >
+                <i class="fa-solid fa-paper-plane mr-2"></i> Gửi xác nhận RSVP
+              </button>
+            </form>
+
+            <!-- Mừng cưới Toggle Drawer -->
+            <div class="mt-5 border-t border-gray-100 pt-5">
+              <button
+                onclick="toggleGiftDrawer()"
+                class="w-full border border-gold-400 text-emerald-950 hover:bg-gold-400 hover:text-emerald-950 font-bold py-3 sm:py-3.5 rounded-lg sm:rounded-xl text-[9px] sm:text-[10px] tracking-widest transition-all uppercase focus:outline-none"
+              >
+                <i class="fa-solid fa-gift mr-1.5"></i> Mở phong bao mừng cưới
+                (QR Bank)
+              </button>
+
+              <div
+                id="giftDrawer"
+                class="hidden mt-4 space-y-4 animate__animated animate__fadeIn"
+              >
+                <div class="grid grid-cols-1 sm:grid-cols-1">
+                  <!-- <div
+                    class="bg-gray-50 p-4 rounded-xl sm:rounded-2xl border border-gold-400/30 text-center space-y-2 shadow-sm"
+                  >
+                    <span
+                      class="block text-[9px] font-bold text-emerald-950 uppercase tracking-widest"
+                      >CHÚ RỂ HỮU HẬU</span
+                    >
+                    <img
+                      loading="lazy"
+                      src="https://placehold.co/200x200/132E1D/C5A880?text=QR+Groom+Bank"
+                      alt="QR Groom Banking"
+                      class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl border border-gold-400/10"
+                    />
+                    <div
+                      class="text-[10px] sm:text-[11px] text-gray-500 space-y-0.5"
+                    >
+                      <p class="font-bold text-emerald-950">MB Bank</p>
+                      <p>STK: 0909123456</p>
+                    </div>
+                  </div> -->
+                  <div
+                    class="bg-gray-50 p-4 rounded-xl sm:rounded-2xl border border-gold-400/30 text-center space-y-2 shadow-sm"
+                  >
+                    <span
+                      class="block text-[9px] font-bold text-emerald-950 uppercase tracking-widest"
+                      >CÔ DÂU THUỲ LINH</span
+                    >
+                    <img
+                      loading="lazy"
+                      src="./assets/images/qr-tech.jpeg"
+                      alt="QR Techcombank"
+                      class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl border border-gold-400/10"
+                      style="object-fit: contain;"
+                    />
+                    <div
+                      class="text-[10px] sm:text-[11px] text-gray-500 space-y-0.5"
+                    >
+                      <p class="font-bold text-emerald-950">Techcombank</p>
+                      <p>STK: 1903 8697 9930 19</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wishing Wall (Right) -->
+          <div class="flex flex-col justify-between h-full">
+            <div
+              class="bg-emerald-950 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl border border-gold-400/20 flex-1 flex flex-col justify-between min-h-[480px]"
+            >
+              <div class="space-y-4">
+                <h3
+                  class="text-lg sm:text-2xl font-bold text-gold-300 flex items-center gap-2 font-sans"
+                >
+                  <i class="fa-solid fa-quote-left text-sm sm:text-lg"></i> Bức
+                  Tường Chúc Phúc
+                </h3>
+                <p class="text-gray-300 text-xs sm:text-sm">
+                  Gửi gắm lời chúc ý nghĩa của quý khách trực tiếp lên tường để
+                  lưu giữ những kỷ niệm quý giá.
+                </p>
+
+                <!-- Scrollable Wishing Wall Content (JS Hydrated) -->
+                <div
+                  id="wishesContainer"
+                  class="space-y-3 max-h-[250px] sm:max-h-[280px] overflow-y-auto pr-1 scrollbar-thin"
+                >
+                  <!-- Wishing cards appended here -->
+                </div>
+              </div>
+
+              <!-- Wish Input Box -->
+              <div class="mt-5 border-t border-gold-400/10 pt-4 space-y-3">
+                <div class="flex gap-2">
+                  <input
+                    id="wisherName"
+                    type="text"
+                    class="bg-emerald-900 border border-gold-400/20 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs text-white w-1/3 focus:outline-none focus:ring-1 focus:ring-gold-400"
+                    placeholder="Tên bạn"
+                  />
+                  <input
+                    id="wisherText"
+                    type="text"
+                    class="bg-emerald-900 border border-gold-400/20 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs text-white w-2/3 focus:outline-none focus:ring-1 focus:ring-gold-400"
+                    placeholder="Lời chúc ngọt ngào..."
+                  />
+                </div>
+                <button
+                  onclick="postWish()"
+                  class="w-full bg-gold-gradient text-emerald-950 font-bold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs transition-transform hover:scale-105 tracking-widest uppercase focus:outline-none"
+                >
+                  Gửi lời chúc mừng <i class="fa-solid fa-heart ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Thank You Section -->
-    <section class="py-16 sm:py-28 bg-emerald-950 text-white relative text-center px-4">
-        <div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center"
-            style="background-image: url('./assets/images/backgrounds/bg-5.jpeg');">
-        </div>
-        <div class="relative z-10 max-w-4xl mx-auto space-y-4 sm:space-y-6">
-            <p class="text-6xl sm:text-7xl font-normal text-gold-300 text-script block">Thank You</p>
-            <h2 class="text-xl sm:text-5xl font-bold text-white leading-tight">Sự hiện diện của quý vị là niềm vinh hạnh
-                của chúng tôi!</h2>
-            <div class="w-16 sm:w-24 h-[1px] bg-gold-400 mx-auto my-3"></div>
-            <p class="text-gray-400 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-semibold">Hữu Hậu & Thuỳ Linh
-                • 24.07.2026</p>
-        </div>
+    <section
+      class="py-16 sm:py-28 bg-emerald-950 text-white relative text-center px-4"
+    >
+      <div
+        class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center"
+        style="
+          background-image: url(&quot;./assets/images/backgrounds/bg-5.jpeg&quot;);
+        "
+      ></div>
+      <div class="relative z-10 max-w-4xl mx-auto space-y-4 sm:space-y-6">
+        <p
+          class="text-6xl sm:text-7xl font-normal text-gold-300 text-script block"
+        >
+          Thank You
+        </p>
+        <h2 class="text-xl sm:text-5xl font-bold text-white leading-tight">
+          Sự hiện diện của quý vị là niềm vinh hạnh của chúng tôi!
+        </h2>
+        <div class="w-16 sm:w-24 h-[1px] bg-gold-400 mx-auto my-3"></div>
+        <p
+          class="text-gray-400 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-semibold"
+        >
+          Hữu Hậu & Thuỳ Linh • 24.07.2026
+        </p>
+      </div>
     </section>
 
     <!-- Tiny elegant toast notification -->
-    <div id="toast"
-        class="fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-emerald-950 text-gold-300 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-2xl border border-gold-400/20 z-50 flex items-center gap-2 opacity-0 pointer-events-none transition-opacity duration-300 text-[11px] sm:text-xs tracking-wider">
-        <i id="toastIcon" class="fa-solid fa-circle-check"></i>
-        <span id="toastMsg">Thành công!</span>
+    <div
+      id="toast"
+      class="fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-emerald-950 text-gold-300 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-2xl border border-gold-400/20 z-50 flex items-center gap-2 opacity-0 pointer-events-none transition-opacity duration-300 text-[11px] sm:text-xs tracking-wider"
+    >
+      <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+      <span id="toastMsg">Thành công!</span>
     </div>
 
     <!-- Scripts for App Interactions -->
     <script>
-        // DOM Elements
-        const audio = document.getElementById('weddingMusic');
-        const musicToggle = document.getElementById('musicToggle');
-        const musicIcon = document.getElementById('musicIcon');
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const toast = document.getElementById('toast');
-        const toastMsg = document.getElementById('toastMsg');
-        const toastIcon = document.getElementById('toastIcon');
+      // DOM Elements
+      const audio = document.getElementById("weddingMusic");
+      const musicToggle = document.getElementById("musicToggle");
+      const musicIcon = document.getElementById("musicIcon");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const toast = document.getElementById("toast");
+      const toastMsg = document.getElementById("toastMsg");
+      const toastIcon = document.getElementById("toastIcon");
 
-        // Playback Autoplay Trigger on first click
-        let triedAutoplay = false;
-        document.body.addEventListener('click', () => {
-            if (!triedAutoplay) {
-                audio.play().then(() => {
-                    musicIcon.className = "fa-solid fa-pause text-base sm:text-lg animate-spin";
-                    musicIcon.style.animationDuration = "8s";
-                }).catch(() => { });
-                triedAutoplay = true;
-            }
+      // Playback Autoplay Trigger on first click
+      let triedAutoplay = false;
+      document.body.addEventListener("click", () => {
+        if (!triedAutoplay) {
+          audio
+            .play()
+            .then(() => {
+              musicIcon.className =
+                "fa-solid fa-pause text-base sm:text-lg animate-spin";
+              musicIcon.style.animationDuration = "8s";
+            })
+            .catch(() => {});
+          triedAutoplay = true;
+        }
+      });
+
+      // 1. Music Controls
+      musicToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (audio.paused) {
+          audio.play();
+          musicIcon.className =
+            "fa-solid fa-pause text-base sm:text-lg animate-spin";
+          musicIcon.style.animationDuration = "8s";
+          showToast("Đang phát nhạc nền...", "music");
+        } else {
+          audio.pause();
+          musicIcon.className = "fa-solid fa-play text-base sm:text-lg";
+          showToast("Đã tạm dừng nhạc nền", "info");
+        }
+      });
+
+      // 2. Scroll to Top Display
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          scrollTopBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollTopBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      };
+
+      // 3. Mobile Navigation Menu Toggle
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
         });
+      });
 
-        // 1. Music Controls
-        musicToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (audio.paused) {
-                audio.play();
-                musicIcon.className = "fa-solid fa-pause text-base sm:text-lg animate-spin";
-                musicIcon.style.animationDuration = "8s";
-                showToast("Đang phát nhạc nền...", "music");
-            } else {
-                audio.pause();
-                musicIcon.className = "fa-solid fa-play text-base sm:text-lg";
-                showToast("Đã tạm dừng nhạc nền", "info");
-            }
+      // 4. Live Countdown to 24th July 2026
+      const countdownDate = new Date("July 24, 2026 11:00:00").getTime();
+      const updateCountdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText =
+          days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText =
+          hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText =
+          minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText =
+          seconds < 10 ? "0" + seconds : seconds;
+
+        if (distance < 0) {
+          clearInterval(updateCountdown);
+          document.getElementById("days").innerText = "00";
+          document.getElementById("hours").innerText = "00";
+          document.getElementById("minutes").innerText = "00";
+          document.getElementById("seconds").innerText = "00";
+        }
+      }, 1000);
+
+      // 5. Automatic Slideshow System
+      let slideIndex = 0;
+      let isPlaying = true;
+      let slideTimer;
+      const slides = document.querySelectorAll(".slideshow-item");
+      const totalSlides = slides.length;
+      const playPauseBtn = document.getElementById("playPauseBtn");
+      const playPauseIcon = document.getElementById("playPauseIcon");
+      const slideCounter = document.getElementById("slideCounter");
+      const progressBar = document.getElementById("slideshowProgress");
+
+      function startSlideshow() {
+        stopSlideshow();
+        slideTimer = setInterval(() => {
+          nextSlide();
+        }, 3500); // 3.5 seconds autoplay interval
+      }
+
+      function stopSlideshow() {
+        clearInterval(slideTimer);
+      }
+
+      function showSlide(index) {
+        // Bound index safely
+        if (index >= totalSlides) {
+          slideIndex = 0;
+        } else if (index < 0) {
+          slideIndex = totalSlides - 1;
+        } else {
+          slideIndex = index;
+        }
+
+        // Reset classes
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
         });
+        slides[slideIndex].classList.add("active");
 
-        // 2. Scroll to Top Display
-        window.onscroll = function () {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
-            }
-        };
+        // Update UI elements
+        slideCounter.innerText = `${slideIndex + 1} / ${totalSlides}`;
+        progressBar.style.width = `${((slideIndex + 1) / totalSlides) * 100}%`;
+      }
 
-        // 3. Mobile Navigation Menu Toggle
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+      function nextSlide() {
+        showSlide(slideIndex + 1);
+      }
 
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+      function prevSlide() {
+        showSlide(slideIndex - 1);
+      }
 
-        // 4. Live Countdown to 24th July 2026
-        const countdownDate = new Date("July 24, 2026 11:00:00").getTime();
-        const updateCountdown = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
+      // Slideshow controls click action
+      document.getElementById("nextSlide").addEventListener("click", () => {
+        nextSlide();
+        if (isPlaying) startSlideshow(); // reset timer
+      });
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("prevSlide").addEventListener("click", () => {
+        prevSlide();
+        if (isPlaying) startSlideshow(); // reset timer
+      });
 
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-
-            if (distance < 0) {
-                clearInterval(updateCountdown);
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
-            }
-        }, 1000);
-
-        // 5. Automatic Slideshow System
-        let slideIndex = 0;
-        let isPlaying = true;
-        let slideTimer;
-        const slides = document.querySelectorAll('.slideshow-item');
-        const totalSlides = slides.length;
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const playPauseIcon = document.getElementById('playPauseIcon');
-        const slideCounter = document.getElementById('slideCounter');
-        const progressBar = document.getElementById('slideshowProgress');
-
-        function startSlideshow() {
-            stopSlideshow();
-            slideTimer = setInterval(() => {
-                nextSlide();
-            }, 3500); // 3.5 seconds autoplay interval
+      playPauseBtn.addEventListener("click", () => {
+        if (isPlaying) {
+          stopSlideshow();
+          playPauseIcon.className = "fa-solid fa-play";
+          isPlaying = false;
+          showToast("Đã tạm dừng tự động chạy slide", "info");
+        } else {
+          startSlideshow();
+          playPauseIcon.className = "fa-solid fa-pause";
+          isPlaying = true;
+          showToast("Bật trình chiếu tự động", "success");
         }
+      });
 
-        function stopSlideshow() {
-            clearInterval(slideTimer);
+      // Initialize slideshow
+      startSlideshow();
+      showSlide(0);
+
+      // 6. Image Lightbox
+      function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.classList.remove("opacity-0", "pointer-events-none");
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add("opacity-0", "pointer-events-none");
+      }
+
+      // 7. Toggle Gift QR Drawer
+      function toggleGiftDrawer() {
+        const drawer = document.getElementById("giftDrawer");
+        drawer.classList.toggle("hidden");
+      }
+
+      // 8. Wishing Wall interactive logic
+      const defaultWishes = [
+        {
+          name: "Thịnh Ỏ",
+          text: "Chúc anh Hậu và chị Linh trăm năm hạnh phúc, rạng ngời nắm tay nhau chung bước nhé!",
+          rel: "Bạn Cô Dâu",
+        },
+        {
+          name: "Minh Anh",
+          text: "Mừng ngày trọng đại của hai người bạn thân! Chúc hai bạn cuộc sống viên mãn bền lâu.",
+          rel: "Bạn Chú Rể",
+        },
+        {
+          name: "Dì Út",
+          text: "Gia đình vô cùng hân hoan chúc mừng hạnh phúc của hai con. Chúc hai con vẹn tròn duyên nợ.",
+          rel: "Gia Đình",
+        },
+      ];
+
+      function loadWishes() {
+        let wishes = JSON.parse(localStorage.getItem("wedding_wishes_updated"));
+        if (!wishes) {
+          wishes = defaultWishes;
+          localStorage.setItem(
+            "wedding_wishes_updated",
+            JSON.stringify(wishes),
+          );
         }
-
-        function showSlide(index) {
-            // Bound index safely
-            if (index >= totalSlides) {
-                slideIndex = 0;
-            } else if (index < 0) {
-                slideIndex = totalSlides - 1;
-            } else {
-                slideIndex = index;
-            }
-
-            // Reset classes
-            slides.forEach((slide) => {
-                slide.classList.remove('active');
-            });
-            slides[slideIndex].classList.add('active');
-
-            // Update UI elements
-            slideCounter.innerText = `${slideIndex + 1} / ${totalSlides}`;
-            progressBar.style.width = `${((slideIndex + 1) / totalSlides) * 100}%`;
-        }
-
-        function nextSlide() {
-            showSlide(slideIndex + 1);
-        }
-
-        function prevSlide() {
-            showSlide(slideIndex - 1);
-        }
-
-        // Slideshow controls click action
-        document.getElementById('nextSlide').addEventListener('click', () => {
-            nextSlide();
-            if (isPlaying) startSlideshow(); // reset timer
-        });
-
-        document.getElementById('prevSlide').addEventListener('click', () => {
-            prevSlide();
-            if (isPlaying) startSlideshow(); // reset timer
-        });
-
-        playPauseBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                stopSlideshow();
-                playPauseIcon.className = "fa-solid fa-play";
-                isPlaying = false;
-                showToast("Đã tạm dừng tự động chạy slide", "info");
-            } else {
-                startSlideshow();
-                playPauseIcon.className = "fa-solid fa-pause";
-                isPlaying = true;
-                showToast("Bật trình chiếu tự động", "success");
-            }
-        });
-
-        // Initialize slideshow
-        startSlideshow();
-        showSlide(0);
-
-        // 6. Image Lightbox
-        function openLightbox(src) {
-            lightboxImg.src = src;
-            lightbox.classList.remove('opacity-0', 'pointer-events-none');
-        }
-
-        function closeLightbox() {
-            lightbox.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        // 7. Toggle Gift QR Drawer
-        function toggleGiftDrawer() {
-            const drawer = document.getElementById('giftDrawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        // 8. Wishing Wall interactive logic
-        const defaultWishes = [
-            { name: "Lan Phương", text: "Chúc anh Hậu và chị Linh trăm năm hạnh phúc, rạng ngời nắm tay nhau chung bước nhé!", rel: "Bạn Cô Dâu" },
-            { name: "Minh Anh", text: "Mừng ngày trọng đại của hai người bạn thân! Chúc hai bạn cuộc sống viên mãn bền lâu.", rel: "Bạn Chú Rể" },
-            { name: "Dì Út", text: "Gia đình vô cùng hân hoan chúc mừng hạnh phúc của hai con. Chúc hai con vẹn tròn duyên nợ.", rel: "Gia Đình" }
-        ];
-
-        function loadWishes() {
-            let wishes = JSON.parse(localStorage.getItem('wedding_wishes_updated'));
-            if (!wishes) {
-                wishes = defaultWishes;
-                localStorage.setItem('wedding_wishes_updated', JSON.stringify(wishes));
-            }
-            const container = document.getElementById('wishesContainer');
-            container.innerHTML = '';
-            wishes.forEach(w => {
-                const wishCard = document.createElement('div');
-                wishCard.className = 'bg-emerald-900/50 border border-gold-400/10 p-3.5 rounded-xl space-y-1 animate__animated animate__fadeInUp';
-                wishCard.innerHTML = `
+        const container = document.getElementById("wishesContainer");
+        container.innerHTML = "";
+        wishes.forEach((w) => {
+          const wishCard = document.createElement("div");
+          wishCard.className =
+            "bg-emerald-900/50 border border-gold-400/10 p-3.5 rounded-xl space-y-1 animate__animated animate__fadeInUp";
+          wishCard.innerHTML = `
                     <div class="flex justify-between items-center text-[11px] sm:text-xs">
                         <span class="font-bold text-gold-300">${w.name}</span>
-                        <span class="text-[8px] bg-gold-400/20 text-gold-200 px-2 py-0.5 rounded-full tracking-wider uppercase font-semibold">${w.rel || 'Khách Mời'}</span>
+                        <span class="text-[8px] bg-gold-400/20 text-gold-200 px-2 py-0.5 rounded-full tracking-wider uppercase font-semibold">${w.rel || "Khách Mời"}</span>
                     </div>
                     <p class="text-[11px] sm:text-xs text-gray-200 leading-relaxed">${w.text}</p>
                 `;
-                container.appendChild(wishCard);
-            });
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function postWish() {
-            const nameInput = document.getElementById('wisherName');
-            const textInput = document.getElementById('wisherText');
-            if (!nameInput.value.trim() || !textInput.value.trim()) {
-                showToast("Vui lòng nhập Tên và Lời Chúc nhé!", "error");
-                return;
-            }
-
-            const newWish = {
-                name: nameInput.value.trim(),
-                text: textInput.value.trim(),
-                rel: "Khách Quý"
-            };
-
-            let wishes = JSON.parse(localStorage.getItem('wedding_wishes_updated')) || [];
-            wishes.push(newWish);
-            localStorage.setItem('wedding_wishes_updated', JSON.stringify(wishes));
-
-            loadWishes();
-            nameInput.value = '';
-            textInput.value = '';
-            showToast("Gửi lời chúc thành công! Cảm ơn bạn.", "success");
-        }
-
-        // 9. RSVP Submission
-        document.getElementById('rsvpForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('guestName').value;
-            showToast(`Cảm ơn ${name}! Phản hồi của bạn đã được gửi đi thành công.`, "success");
-            e.target.reset();
+          container.appendChild(wishCard);
         });
+        container.scrollTop = container.scrollHeight;
+      }
 
-        // Toast Helper
-        function showToast(message, type = "success") {
-            toastMsg.innerText = message;
-            if (type === "success") {
-                toastIcon.className = "fa-solid fa-circle-check text-green-400";
-            } else if (type === "error") {
-                toastIcon.className = "fa-solid fa-triangle-exclamation text-red-400";
-            } else if (type === "music") {
-                toastIcon.className = "fa-solid fa-music text-gold-300 animate-pulse";
-            } else {
-                toastIcon.className = "fa-solid fa-circle-info text-blue-400";
-            }
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 3000);
+      function postWish() {
+        const nameInput = document.getElementById("wisherName");
+        const textInput = document.getElementById("wisherText");
+        if (!nameInput.value.trim() || !textInput.value.trim()) {
+          showToast("Vui lòng nhập Tên và Lời Chúc nhé!", "error");
+          return;
         }
 
-        // On Load Initializers
-        window.onload = function () {
-            loadWishes();
+        const newWish = {
+          name: nameInput.value.trim(),
+          text: textInput.value.trim(),
+          rel: "Khách Quý",
         };
-    </script>
-</body>
 
+        let wishes =
+          JSON.parse(localStorage.getItem("wedding_wishes_updated")) || [];
+        wishes.push(newWish);
+        localStorage.setItem("wedding_wishes_updated", JSON.stringify(wishes));
+
+        loadWishes();
+        nameInput.value = "";
+        textInput.value = "";
+        showToast("Gửi lời chúc thành công! Cảm ơn bạn.", "success");
+      }
+
+      // 9. RSVP Submission
+      document.getElementById("rsvpForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("guestName").value;
+        showToast(
+          `Cảm ơn ${name}! Phản hồi của bạn đã được gửi đi thành công.`,
+          "success",
+        );
+        e.target.reset();
+      });
+
+      // Toast Helper
+      function showToast(message, type = "success") {
+        toastMsg.innerText = message;
+        if (type === "success") {
+          toastIcon.className = "fa-solid fa-circle-check text-green-400";
+        } else if (type === "error") {
+          toastIcon.className = "fa-solid fa-triangle-exclamation text-red-400";
+        } else if (type === "music") {
+          toastIcon.className = "fa-solid fa-music text-gold-300 animate-pulse";
+        } else {
+          toastIcon.className = "fa-solid fa-circle-info text-blue-400";
+        }
+        toast.classList.remove("opacity-0", "pointer-events-none");
+        setTimeout(() => {
+          toast.classList.add("opacity-0", "pointer-events-none");
+        }, 3000);
+      }
+
+      // On Load Initializers
+      window.onload = function () {
+        loadWishes();
+      };
+    </script>
+  </body>
 </html>
