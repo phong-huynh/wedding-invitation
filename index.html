@@ -40,6 +40,7 @@
         },
       };
     </script>
+    <script src="./js/rsvp.js"></script>
     <!-- Google Fonts: Import Plus Jakarta Sans and The Nautigal -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1329,7 +1330,8 @@
                   class="fa-solid fa-location-dot text-emerald-900 w-4 text-sm mt-0.5"
                 ></i>
                 <span class="flex-1"
-                  >Tư gia nhà gái - 698/33 Hương Lộ 2, Quận Bình Tân, TP. Hồ Chí Minh</span
+                  >Tư gia nhà gái - 698/33 Hương Lộ 2, Quận Bình Tân, TP. Hồ Chí
+                  Minh</span
                 >
               </p>
             </div>
@@ -1635,7 +1637,7 @@
                       src="./assets/images/qr-tech.jpeg"
                       alt="QR Techcombank"
                       class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-xl border border-gold-400/10"
-                      style="object-fit: contain;"
+                      style="object-fit: contain"
                     />
                     <div
                       class="text-[10px] sm:text-[11px] text-gray-500 space-y-0.5"
@@ -2010,15 +2012,37 @@
       }
 
       // 9. RSVP Submission
-      document.getElementById("rsvpForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("guestName").value;
-        showToast(
-          `Cảm ơn ${name}! Phản hồi của bạn đã được gửi đi thành công.`,
-          "success",
-        );
-        e.target.reset();
-      });
+      document
+        .getElementById("rsvpForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const guestName = document.getElementById("guestName").value;
+          const guestPhone = document.getElementById("guestPhone").value;
+          const guestRelation = document.getElementById("guestRelation").value;
+          const attendance = document.querySelector(
+            'input[name="attendance"]:checked',
+          ).value;
+          const guestCount = document.getElementById("guestCount").value;
+
+          try {
+            await sendConfirmRSVP({
+              guestName,
+              guestPhone,
+              guestRelation,
+              attendance,
+              guestCount,
+            });
+
+            showToast(
+              `Cảm ơn ${guestName}! Phản hồi của bạn đã được gửi đi thành công.`,
+              "success",
+            );
+          } catch (error) {
+            showToast(`Gửi thất bại. Hãy thử lại`, "error");
+          } finally {
+            e.target.reset();
+          }
+        });
 
       // Toast Helper
       function showToast(message, type = "success") {
