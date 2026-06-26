@@ -41,6 +41,7 @@
       };
     </script>
     <script src="./js/rsvp.js"></script>
+    <script src="./js/wishes.js"></script>
     <!-- Google Fonts: Import Plus Jakarta Sans and The Nautigal -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1945,17 +1946,12 @@
         {
           name: "Thịnh Ỏ",
           text: "Chúc anh Hậu và chị Linh trăm năm hạnh phúc, rạng ngời nắm tay nhau chung bước nhé!",
-          rel: "Bạn Cô Dâu",
+          rel: "Đồng Nghiệp",
         },
         {
-          name: "Minh Anh",
-          text: "Mừng ngày trọng đại của hai người bạn thân! Chúc hai bạn cuộc sống viên mãn bền lâu.",
-          rel: "Bạn Chú Rể",
-        },
-        {
-          name: "Dì Út",
-          text: "Gia đình vô cùng hân hoan chúc mừng hạnh phúc của hai con. Chúc hai con vẹn tròn duyên nợ.",
-          rel: "Gia Đình",
+          name: "Phong Huỳnh",
+          text: "Mừng ngày trọng đại của hai bạn trẻ! Chúc vợ chồng son ngày ngày ân ái, bên nhau ngọt ngào, bình an nắm tay nhau đến già nha!",
+          rel: "Đồng Nghiệp",
         },
       ];
 
@@ -1986,7 +1982,7 @@
         container.scrollTop = container.scrollHeight;
       }
 
-      function postWish() {
+      async function postWish() {
         const nameInput = document.getElementById("wisherName");
         const textInput = document.getElementById("wisherText");
         if (!nameInput.value.trim() || !textInput.value.trim()) {
@@ -2000,15 +1996,28 @@
           rel: "Khách Quý",
         };
 
-        let wishes =
-          JSON.parse(localStorage.getItem("wedding_wishes_updated")) || [];
-        wishes.push(newWish);
-        localStorage.setItem("wedding_wishes_updated", JSON.stringify(wishes));
+        try {
+          let wishes =
+            JSON.parse(localStorage.getItem("wedding_wishes_updated")) || [];
+          wishes.push(newWish);
+          localStorage.setItem(
+            "wedding_wishes_updated",
+            JSON.stringify(wishes),
+          );
 
-        loadWishes();
-        nameInput.value = "";
-        textInput.value = "";
-        showToast("Gửi lời chúc thành công! Cảm ơn bạn.", "success");
+          loadWishes();
+          showToast("Gửi lời chúc thành công! Cảm ơn bạn.", "success");
+
+          await sendWishes({
+            guestName: nameInput.value.trim(),
+            wishes: textInput.value.trim(),
+          });
+        } catch (error) {
+          showToast("Gửi thất bại. Hãy thử lại!", "error");
+        } finally {
+          nameInput.value = "";
+          textInput.value = "";
+        }
       }
 
       // 9. RSVP Submission
@@ -2025,6 +2034,11 @@
           const guestCount = document.getElementById("guestCount").value;
 
           try {
+            showToast(
+              `Cảm ơn ${guestName}! Phản hồi của bạn đã được gửi đi thành công.`,
+              "success",
+            );
+
             await sendConfirmRSVP({
               guestName,
               guestPhone,
@@ -2032,11 +2046,6 @@
               attendance,
               guestCount,
             });
-
-            showToast(
-              `Cảm ơn ${guestName}! Phản hồi của bạn đã được gửi đi thành công.`,
-              "success",
-            );
           } catch (error) {
             showToast(`Gửi thất bại. Hãy thử lại`, "error");
           } finally {
