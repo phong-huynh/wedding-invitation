@@ -60,6 +60,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 
+    <link rel="stylesheet" href="./assets/css/loading.css" />
+
     <style>
       body {
         background-color: #f4f6f0;
@@ -1744,6 +1746,14 @@
       <span id="toastMsg">Thành công!</span>
     </div>
 
+    <!-- Màn hình phủ Loading Trái Tim (Mặc định ẩn) -->
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="heart-container">
+        <div class="heart"></div>
+      </div>
+      <p>Đang gửi đến Hữu Hậu và Thuỳ Linh...</p>
+    </div>
+
     <!-- Scripts for App Interactions -->
     <script>
       // DOM Elements
@@ -1985,6 +1995,8 @@
       async function postWish() {
         const nameInput = document.getElementById("wisherName");
         const textInput = document.getElementById("wisherText");
+        const loading = document.getElementById("loadingOverlay");
+
         if (!nameInput.value.trim() || !textInput.value.trim()) {
           showToast("Vui lòng nhập Tên và Lời Chúc nhé!", "error");
           return;
@@ -2005,18 +2017,21 @@
             JSON.stringify(wishes),
           );
 
-          loadWishes();
-          showToast("Gửi lời chúc thành công! Cảm ơn bạn.", "success");
+          loading.classList.add("active");
 
           await sendWishes({
             guestName: nameInput.value.trim(),
             wishes: textInput.value.trim(),
           });
+
+          showToast("Gửi lời chúc thành công! Cảm ơn bạn.", "success");
+          loadWishes();
         } catch (error) {
           showToast("Gửi thất bại. Hãy thử lại!", "error");
         } finally {
           nameInput.value = "";
           textInput.value = "";
+          loading.classList.remove("active");
         }
       }
 
@@ -2032,12 +2047,10 @@
             'input[name="attendance"]:checked',
           ).value;
           const guestCount = document.getElementById("guestCount").value;
+          const loading = document.getElementById("loadingOverlay");
 
           try {
-            showToast(
-              `Cảm ơn ${guestName}! Phản hồi của bạn đã được gửi đi thành công.`,
-              "success",
-            );
+            loading.classList.add("active");
 
             await sendConfirmRSVP({
               guestName,
@@ -2046,10 +2059,16 @@
               attendance,
               guestCount,
             });
+
+            showToast(
+              `Cảm ơn ${guestName}! Phản hồi của bạn đã được gửi đi thành công.`,
+              "success",
+            );
           } catch (error) {
             showToast(`Gửi thất bại. Hãy thử lại`, "error");
           } finally {
             e.target.reset();
+            loading.classList.remove("active");
           }
         });
 

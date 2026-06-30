@@ -1,0 +1,100 @@
+/* Màn hình phủ toàn màn hình */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    255,
+    245,
+    247,
+    0.9
+  ); /* Nền hồng trắng sữa rất hợp với đám cưới */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Kích hoạt hiển thị loading khi gửi form */
+.loading-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Khung chứa để căn chỉnh vị trí trái tim */
+.heart-container {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+/* Vẽ trái tim bằng CSS thuần */
+.heart {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: #ff6b81; /* Màu hồng đỏ của trái tim */
+  transform: rotate(45deg);
+  animation: heartbeat 0.8s infinite ease-in-out; /* Tốc độ đập */
+}
+
+/* Tạo 2 tai tròn của trái tim */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ff6b81;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -15px;
+  left: 0;
+}
+
+.heart::after {
+  left: -15px;
+  top: 0;
+}
+
+/* Chữ thông báo phía dưới trái tim */
+.loading-overlay p {
+  margin-top: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ff6b81;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Hiệu ứng nhịp đập trái tim */
+@keyframes heartbeat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  20% {
+    transform: rotate(45deg) scale(1.25);
+  }
+  40% {
+    transform: rotate(45deg) scale(1.1);
+  }
+  60% {
+    transform: rotate(45deg) scale(1.35);
+  }
+  80% {
+    transform: rotate(45deg) scale(1);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
