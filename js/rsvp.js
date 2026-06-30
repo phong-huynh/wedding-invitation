@@ -31,13 +31,15 @@ function toLocalTime(date) {
 async function sendConfirmRSVP(_payload) {
   try {
     const _sheet =
-      "https://script.google.com/macros/s/AKfycbwam0nPVYfrPqbIUnH4aehfsuOC1MkRSmcpT9ZGg88ExiTS2PSFu5WV2lqPSfzXpzBl/exec";
+      "https://script.google.com/macros/s/AKfycbwpFLAwP9FHA8sz6MOuKSomTPmQSgz3jM91wnbU_l0UtGYL3oFeZHUJIy2d71-U2zxBgQ/exec";
+
     return await fetch(_sheet, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
       },
       body: new URLSearchParams({
+        action: "rsvp",
         GuestName: _payload?.guestName,
         GuestPhone: formatVietnamesePhoneNumber(_payload?.guestPhone),
         GuestRelation: _payload?.guestRelation,
